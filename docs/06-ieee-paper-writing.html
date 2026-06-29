@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Writing an IEEE Paper from an Application Case and Simulation – Learning Mission-Oriented Ecosystem Engineering</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./instructor-guide.html" rel="next">
+<link href="./05-capstone.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7c69b197886ae2a34062761d21e44731.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ec8eff129d6f50c8392963982e963180.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./06-ieee-paper-writing.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Writing an IEEE Paper from an Application Case and Simulation</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Learning Mission-Oriented Ecosystem Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MOEE Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-modeling-tutorial.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tutorial: Build an MOEE Model for a Specific Case</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-python-simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Step-by-Step Python Simulation Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiments, Evidence, and Interpretation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-capstone.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capstone Project</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./06-ieee-paper-writing.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Writing an IEEE Paper from an Application Case and Simulation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instructor-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instructor Guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./worksheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Modeling Worksheets</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#purpose-and-outcome" id="toc-purpose-and-outcome" class="nav-link active" data-scroll-target="#purpose-and-outcome"><span class="header-section-number">7</span> Purpose and outcome</a></li>
+  <li><a href="#start-with-the-papers-argument" id="toc-start-with-the-papers-argument" class="nav-link" data-scroll-target="#start-with-the-papers-argument"><span class="header-section-number">8</span> Start with the paper’s argument</a>
+  <ul class="collapse">
+  <li><a href="#convert-the-application-into-a-research-problem" id="toc-convert-the-application-into-a-research-problem" class="nav-link" data-scroll-target="#convert-the-application-into-a-research-problem"><span class="header-section-number">8.1</span> Convert the application into a research problem</a></li>
+  <li><a href="#write-the-claim-before-the-manuscript" id="toc-write-the-claim-before-the-manuscript" class="nav-link" data-scroll-target="#write-the-claim-before-the-manuscript"><span class="header-section-number">8.2</span> Write the claim before the manuscript</a></li>
+  <li><a href="#build-a-claimevidence-map" id="toc-build-a-claimevidence-map" class="nav-link" data-scroll-target="#build-a-claimevidence-map"><span class="header-section-number">8.3</span> Build a claim–evidence map</a></li>
+  </ul></li>
+  <li><a href="#choose-a-paper-type-and-scope" id="toc-choose-a-paper-type-and-scope" class="nav-link" data-scroll-target="#choose-a-paper-type-and-scope"><span class="header-section-number">9</span> Choose a paper type and scope</a></li>
+  <li><a href="#design-the-manuscript-backward-from-the-claim" id="toc-design-the-manuscript-backward-from-the-claim" class="nav-link" data-scroll-target="#design-the-manuscript-backward-from-the-claim"><span class="header-section-number">10</span> Design the manuscript backward from the claim</a></li>
+  <li><a href="#draft-each-section" id="toc-draft-each-section" class="nav-link" data-scroll-target="#draft-each-section"><span class="header-section-number">11</span> Draft each section</a>
+  <ul class="collapse">
+  <li><a href="#title" id="toc-title" class="nav-link" data-scroll-target="#title"><span class="header-section-number">11.1</span> Title</a></li>
+  <li><a href="#abstract" id="toc-abstract" class="nav-link" data-scroll-target="#abstract"><span class="header-section-number">11.2</span> Abstract</a></li>
+  <li><a href="#i.-introduction" id="toc-i.-introduction" class="nav-link" data-scroll-target="#i.-introduction"><span class="header-section-number">11.3</span> I. Introduction</a></li>
+  <li><a href="#ii.-related-work" id="toc-ii.-related-work" class="nav-link" data-scroll-target="#ii.-related-work"><span class="header-section-number">11.4</span> II. Related Work</a></li>
+  <li><a href="#iii.-application-case-and-problem-formulation" id="toc-iii.-application-case-and-problem-formulation" class="nav-link" data-scroll-target="#iii.-application-case-and-problem-formulation"><span class="header-section-number">11.5</span> III. Application Case and Problem Formulation</a></li>
+  <li><a href="#iv.-proposed-method" id="toc-iv.-proposed-method" class="nav-link" data-scroll-target="#iv.-proposed-method"><span class="header-section-number">11.6</span> IV. Proposed Method</a></li>
+  <li><a href="#v.-experimental-method" id="toc-v.-experimental-method" class="nav-link" data-scroll-target="#v.-experimental-method"><span class="header-section-number">11.7</span> V. Experimental Method</a>
+  <ul class="collapse">
+  <li><a href="#research-questions" id="toc-research-questions" class="nav-link" data-scroll-target="#research-questions"><span class="header-section-number">11.7.1</span> Research questions</a></li>
+  <li><a href="#comparators-and-ablations" id="toc-comparators-and-ablations" class="nav-link" data-scroll-target="#comparators-and-ablations"><span class="header-section-number">11.7.2</span> Comparators and ablations</a></li>
+  <li><a href="#scenarios-and-parameters" id="toc-scenarios-and-parameters" class="nav-link" data-scroll-target="#scenarios-and-parameters"><span class="header-section-number">11.7.3</span> Scenarios and parameters</a></li>
+  <li><a href="#reproducibility" id="toc-reproducibility" class="nav-link" data-scroll-target="#reproducibility"><span class="header-section-number">11.7.4</span> Reproducibility</a></li>
+  <li><a href="#metrics-and-analysis" id="toc-metrics-and-analysis" class="nav-link" data-scroll-target="#metrics-and-analysis"><span class="header-section-number">11.7.5</span> Metrics and analysis</a></li>
+  </ul></li>
+  <li><a href="#vi.-results" id="toc-vi.-results" class="nav-link" data-scroll-target="#vi.-results"><span class="header-section-number">11.8</span> VI. Results</a></li>
+  <li><a href="#vii.-discussion-and-validity" id="toc-vii.-discussion-and-validity" class="nav-link" data-scroll-target="#vii.-discussion-and-validity"><span class="header-section-number">11.9</span> VII. Discussion and validity</a></li>
+  <li><a href="#viii.-conclusion" id="toc-viii.-conclusion" class="nav-link" data-scroll-target="#viii.-conclusion"><span class="header-section-number">11.10</span> VIII. Conclusion</a></li>
+  </ul></li>
+  <li><a href="#turn-simulation-outputs-into-publication-evidence" id="toc-turn-simulation-outputs-into-publication-evidence" class="nav-link" data-scroll-target="#turn-simulation-outputs-into-publication-evidence"><span class="header-section-number">12</span> Turn simulation outputs into publication evidence</a></li>
+  <li><a href="#figures-and-tables-for-a-compact-ieee-paper" id="toc-figures-and-tables-for-a-compact-ieee-paper" class="nav-link" data-scroll-target="#figures-and-tables-for-a-compact-ieee-paper"><span class="header-section-number">13</span> Figures and tables for a compact IEEE paper</a></li>
+  <li><a href="#ieee-style-quarto-starter" id="toc-ieee-style-quarto-starter" class="nav-link" data-scroll-target="#ieee-style-quarto-starter"><span class="header-section-number">14</span> IEEE-style Quarto starter</a></li>
+  <li><a href="#a-practical-writing-sequence" id="toc-a-practical-writing-sequence" class="nav-link" data-scroll-target="#a-practical-writing-sequence"><span class="header-section-number">15</span> A practical writing sequence</a></li>
+  <li><a href="#final-review-checklist" id="toc-final-review-checklist" class="nav-link" data-scroll-target="#final-review-checklist"><span class="header-section-number">16</span> Final review checklist</a>
+  <ul class="collapse">
+  <li><a href="#research-argument" id="toc-research-argument" class="nav-link" data-scroll-target="#research-argument"><span class="header-section-number">16.1</span> Research argument</a></li>
+  <li><a href="#experimental-integrity" id="toc-experimental-integrity" class="nav-link" data-scroll-target="#experimental-integrity"><span class="header-section-number">16.2</span> Experimental integrity</a></li>
+  <li><a href="#manuscript-quality" id="toc-manuscript-quality" class="nav-link" data-scroll-target="#manuscript-quality"><span class="header-section-number">16.3</span> Manuscript quality</a></li>
+  <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission"><span class="header-section-number">16.4</span> Submission</a></li>
+  </ul></li>
+  <li><a href="#one-page-planning-worksheet" id="toc-one-page-planning-worksheet" class="nav-link" data-scroll-target="#one-page-planning-worksheet"><span class="header-section-number">17</span> One-page planning worksheet</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Writing an IEEE Paper from an Application Case and Simulation</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="purpose-and-outcome" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Purpose and outcome</h1>
+<p>This tutorial turns an engineering application case and its simulation into a focused, reproducible IEEE-style paper. The running example is the sustainable campus food ecosystem developed in this course, but the workflow also applies to transportation, health care, energy, education, and other engineered systems.</p>
+<p>The key move is to treat the case and the simulation as <strong>evidence for a research claim</strong>, not as the paper’s claim by themselves. A publishable paper does more than describe an application or report program output. It states a gap, proposes a technical response, tests that response fairly, and limits its conclusions to what the evidence supports.</p>
+<p>At the end of the tutorial, you should have:</p>
+<ol type="1">
+<li>a one-sentence research claim;</li>
+<li>a contribution list tied to evidence;</li>
+<li>an IEEE-style section outline;</li>
+<li>a reproducible experiment and result package; and</li>
+<li>a submission-ready manuscript source.</li>
+</ol>
+</section>
+<section id="start-with-the-papers-argument" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Start with the paper’s argument</h1>
+<section id="convert-the-application-into-a-research-problem" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="convert-the-application-into-a-research-problem"><span class="header-section-number">8.1</span> Convert the application into a research problem</h2>
+<p>Describe the application in five lines before writing prose:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Element</th>
+<th>Question</th>
+<th>Campus food example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Public need</td>
+<td>What outcome matters, and to whom?</td>
+<td>Affordable, safe, nutritious food for the campus community</td>
+</tr>
+<tr class="even">
+<td>System boundary</td>
+<td>Which place, actors, flows, and time horizon are modeled?</td>
+<td>One campus, its consumers, vendors, suppliers, operator, and governance actors</td>
+</tr>
+<tr class="odd">
+<td>Technical difficulty</td>
+<td>Why do existing methods struggle?</td>
+<td>Stakeholders have different missions and disruptions change feasible exchanges</td>
+</tr>
+<tr class="even">
+<td>Proposed response</td>
+<td>What mechanism is introduced?</td>
+<td>Adaptive PUDAL coordination of stakeholder MIGs and PSKVE exchanges</td>
+</tr>
+<tr class="odd">
+<td>Testable consequence</td>
+<td>What should improve if it works?</td>
+<td>Mission achievement and value retention improve without violating hard constraints</td>
+</tr>
+</tbody>
+</table>
+<p>A research problem is stronger than a topic. “AI for campus food” is a topic. The following is testable:</p>
+<blockquote class="blockquote">
+<p>Fixed coordination rules cannot respond to changing stakeholder missions and resource disruptions; therefore, this study tests whether adaptive multi-stakeholder coordination improves mission achievement and resilience under controlled, matched simulation conditions.</p>
+</blockquote>
+</section>
+<section id="write-the-claim-before-the-manuscript" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="write-the-claim-before-the-manuscript"><span class="header-section-number">8.2</span> Write the claim before the manuscript</h2>
+<p>Use this pattern:</p>
+<blockquote class="blockquote">
+<p>For <strong>[bounded application and conditions]</strong>, the proposed <strong>[method]</strong> improves <strong>[primary outcomes]</strong> relative to <strong>[credible comparator]</strong>, as measured by <strong>[declared metrics]</strong>, while satisfying <strong>[constraints]</strong>.</p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p>For a simulated campus food ecosystem under normal and supply-disruption scenarios, adaptive TISE coordination improves aggregate mission achievement and performance retention relative to baseline and fixed-contract coordination, while preserving stakeholder safety and resource constraints.</p>
+</blockquote>
+<p>This statement is a hypothesis until results support it. If the simulation does not support it, revise the claim rather than hiding inconvenient results.</p>
+</section>
+<section id="build-a-claimevidence-map" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="build-a-claimevidence-map"><span class="header-section-number">8.3</span> Build a claim–evidence map</h2>
+<p>Every contribution must point to an artifact or result.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Proposed contribution</th>
+<th>Required evidence</th>
+<th>Likely paper location</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Formal ecosystem representation</td>
+<td>Defined stakeholders, missions, variables, exchanges, and constraints</td>
+<td>Method/model</td>
+</tr>
+<tr class="even">
+<td>Adaptive coordination method</td>
+<td>Algorithm, inputs, outputs, objective, and complexity or execution details</td>
+<td>Method</td>
+</tr>
+<tr class="odd">
+<td>Reusable simulation testbed</td>
+<td>Architecture, parameters, scenarios, seeds, and code availability</td>
+<td>Experimental setup</td>
+</tr>
+<tr class="even">
+<td>Performance or resilience improvement</td>
+<td>Matched comparisons, uncertainty, effect sizes, and sensitivity tests</td>
+<td>Results</td>
+</tr>
+</tbody>
+</table>
+<p>Remove a claimed contribution if the paper provides no direct evidence for it.</p>
+</section>
+</section>
+<section id="choose-a-paper-type-and-scope" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Choose a paper type and scope</h1>
+<p>An application-and-simulation study usually fits one of these forms:</p>
+<ul>
+<li><strong>Methods paper:</strong> the algorithm or formalism is the main novelty; the case demonstrates it.</li>
+<li><strong>Application paper:</strong> adapting and validating known methods in a consequential domain is the novelty.</li>
+<li><strong>Simulation/testbed paper:</strong> the model, benchmark, or experimental environment is the contribution.</li>
+<li><strong>Comparative study:</strong> the main contribution is a controlled comparison that yields a generalizable insight.</li>
+</ul>
+<p>Choose one primary identity. Trying to present all four equally usually creates an unfocused manuscript. For this project, a methods paper with a simulation-based application evaluation is the natural default.</p>
+<p>Before drafting, check the target IEEE journal or conference’s current scope, page limit, anonymization policy, required sections, and supplementary-material rules. The venue’s author instructions override this tutorial.</p>
+</section>
+<section id="design-the-manuscript-backward-from-the-claim" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Design the manuscript backward from the claim</h1>
+<p>Use the following compact structure. The percentages are planning guides, not IEEE rules.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 30%">
+<col style="width: 40%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Section</th>
+<th>Purpose</th>
+<th style="text-align: right;">Approximate share</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Abstract and index terms</td>
+<td>Compress problem, method, experiment, result, and significance</td>
+<td style="text-align: right;">3–5%</td>
+</tr>
+<tr class="even">
+<td>I. Introduction</td>
+<td>Establish importance, gap, response, and contributions</td>
+<td style="text-align: right;">12–15%</td>
+</tr>
+<tr class="odd">
+<td>II. Related Work</td>
+<td>Position the exact gap against the closest methods</td>
+<td style="text-align: right;">10–15%</td>
+</tr>
+<tr class="even">
+<td>III. Case and Problem Formulation</td>
+<td>Bound the application and formalize the decision problem</td>
+<td style="text-align: right;">12–18%</td>
+</tr>
+<tr class="odd">
+<td>IV. Proposed Method</td>
+<td>Make the method understandable and reproducible</td>
+<td style="text-align: right;">20–25%</td>
+</tr>
+<tr class="even">
+<td>V. Experimental Method</td>
+<td>Define fair tests before showing outcomes</td>
+<td style="text-align: right;">15–20%</td>
+</tr>
+<tr class="odd">
+<td>VI. Results</td>
+<td>Report observations with uncertainty</td>
+<td style="text-align: right;">12–18%</td>
+</tr>
+<tr class="even">
+<td>VII. Discussion</td>
+<td>Interpret mechanisms, limits, and transferability</td>
+<td style="text-align: right;">8–12%</td>
+</tr>
+<tr class="odd">
+<td>VIII. Conclusion</td>
+<td>Answer the research question without new evidence</td>
+<td style="text-align: right;">3–5%</td>
+</tr>
+</tbody>
+</table>
+<p>IEEE conference page limits may require combining the case with the method or combining discussion with results.</p>
+</section>
+<section id="draft-each-section" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Draft each section</h1>
+<section id="title" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="title"><span class="header-section-number">11.1</span> Title</h2>
+<p>Make the title specific enough to reveal the method, problem, and evidence type. Avoid claims such as “optimal,” “intelligent,” or “superior” unless they are precisely established.</p>
+<p>Useful pattern:</p>
+<blockquote class="blockquote">
+<p><strong>[Method]: [Technical purpose] for [application], evaluated through [evidence]</strong></p>
+</blockquote>
+<p>Example:</p>
+<blockquote class="blockquote">
+<p><strong>Adaptive Multi-Stakeholder Coordination for Campus Food Ecosystems: A Digital-Twin Simulation Study</strong></p>
+</blockquote>
+</section>
+<section id="abstract" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="abstract"><span class="header-section-number">11.2</span> Abstract</h2>
+<p>Write the abstract after the results are final. Use five moves in one paragraph:</p>
+<ol type="1">
+<li><strong>Context:</strong> one sentence explaining why the problem matters.</li>
+<li><strong>Gap:</strong> one sentence naming the unresolved technical limitation.</li>
+<li><strong>Method:</strong> one or two sentences describing what was built.</li>
+<li><strong>Evaluation:</strong> one sentence stating comparators, scenarios, metrics, and scale.</li>
+<li><strong>Result and meaning:</strong> one or two sentences with the principal numerical result and a bounded conclusion.</li>
+</ol>
+<p>Template:</p>
+<blockquote class="blockquote">
+<p><strong>[Context].</strong> However, <strong>[specific limitation in existing approaches]</strong>. This paper proposes <strong>[method and essential mechanism]</strong>. We evaluate it in <strong>[application/model]</strong> against <strong>[comparators]</strong> across <strong>[scenarios, seeds, or conditions]</strong>, using <strong>[primary metrics]</strong>. The proposed method achieves <strong>[main result with value and uncertainty]</strong> and <strong>[secondary result]</strong>. These findings indicate <strong>[bounded implication]</strong>, although <strong>[important limitation, if needed]</strong>.</p>
+</blockquote>
+<p>Do not place citations, undefined abbreviations, background surveys, or unreported promises in the abstract.</p>
+</section>
+<section id="i.-introduction" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="i.-introduction"><span class="header-section-number">11.3</span> I. Introduction</h2>
+<p>A reliable six-paragraph introduction is:</p>
+<ol type="1">
+<li>Establish the real engineering need and its consequences.</li>
+<li>Explain the technical difficulty, not merely the domain importance.</li>
+<li>Summarize the closest solution families.</li>
+<li>State precisely what remains unresolved.</li>
+<li>Present the proposed response and evaluation logic.</li>
+<li>List two to four verifiable contributions and preview the paper.</li>
+</ol>
+<p>Contribution template:</p>
+<blockquote class="blockquote">
+<p>The principal contributions are:</p>
+<ol type="1">
+<li>a formal <strong>[model]</strong> that represents <strong>[previously missing capability]</strong>;</li>
+<li>an adaptive <strong>[algorithm/mechanism]</strong> that <strong>[technical action]</strong> subject to <strong>[constraints]</strong>; and</li>
+<li>a reproducible evaluation against <strong>[comparators]</strong> over <strong>[conditions]</strong>, showing <strong>[supported result, added only after analysis]</strong>.</li>
+</ol>
+</blockquote>
+<p>Do not use “The paper is novel” as evidence of novelty. The comparison with prior work must make that case.</p>
+</section>
+<section id="ii.-related-work" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="ii.-related-work"><span class="header-section-number">11.4</span> II. Related Work</h2>
+<p>Organize related work by technical approach, not one paragraph per paper. For this study, useful groups might be mission-oriented engineering, multi-agent or multi-stakeholder coordination, digital twins, smart contracts, and resilience evaluation.</p>
+<p>For each group, answer:</p>
+<ul>
+<li>What problem does the approach solve?</li>
+<li>What information and assumptions does it require?</li>
+<li>What does it optimize or guarantee?</li>
+<li>What remains unavailable for this paper’s problem?</li>
+</ul>
+<p>End with a synthesis table whose columns encode the capabilities needed by the proposed claim. Cite original papers and authoritative standards where possible. A missing citation is not automatically a research gap; demonstrate that the missing capability matters technically.</p>
+</section>
+<section id="iii.-application-case-and-problem-formulation" class="level2" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="iii.-application-case-and-problem-formulation"><span class="header-section-number">11.5</span> III. Application Case and Problem Formulation</h2>
+<p>Separate the real-world narrative from the mathematical abstraction.</p>
+<p>First, define:</p>
+<ul>
+<li>population, location, time step, and study horizon;</li>
+<li>stakeholder roles and decision authority;</li>
+<li>resources, outputs, exchanges, and external inputs;</li>
+<li>normal operation and disruption boundaries; and</li>
+<li>exclusions and assumptions.</li>
+</ul>
+<p>Then formalize the model. At minimum identify:</p>
+<p>[ ={s_1,,s_n}, _t=, _t=, _t=. ]</p>
+<p>State the transition, objective, and constraints:</p>
+<p>[ _{t+1}=f(_t,_t,_t), ]</p>
+<p>[ <em>{</em>{0:T}} J=<em>{t=0}^{T}</em>{i}w_i U_i(_t,_t), ]</p>
+<p>subject to safety, capacity, conservation, fairness, and governance constraints. Define every symbol, unit, range, and data source. If weights express a policy preference rather than an observed fact, say so.</p>
+</section>
+<section id="iv.-proposed-method" class="level2" data-number="11.6">
+<h2 data-number="11.6" class="anchored" data-anchor-id="iv.-proposed-method"><span class="header-section-number">11.6</span> IV. Proposed Method</h2>
+<p>Explain the method in the order a reader would implement it:</p>
+<ol type="1">
+<li>inputs and their availability at decision time;</li>
+<li>state estimation or preprocessing;</li>
+<li>recommendation or optimization step;</li>
+<li>constraint checking and human authorization;</li>
+<li>state update and recorded outputs; and</li>
+<li>stopping or fallback behavior.</li>
+</ol>
+<p>Include one architecture figure and one algorithm listing. The text should explain <strong>why</strong> each operation is necessary; the pseudocode should explain <strong>how</strong> the operations are sequenced.</p>
+<p>Distinguish clearly among:</p>
+<ul>
+<li>baseline operation;</li>
+<li>the strongest credible fixed or state-of-the-art comparator; and</li>
+<li>the proposed adaptive method.</li>
+</ul>
+<p>Do not give the proposed method extra information, a better reasoner, or looser constraints unless that difference is itself the treatment being studied.</p>
+</section>
+<section id="v.-experimental-method" class="level2" data-number="11.7">
+<h2 data-number="11.7" class="anchored" data-anchor-id="v.-experimental-method"><span class="header-section-number">11.7</span> V. Experimental Method</h2>
+<p>Write this section as a protocol that another researcher could repeat.</p>
+<section id="research-questions" class="level3" data-number="11.7.1">
+<h3 data-number="11.7.1" class="anchored" data-anchor-id="research-questions"><span class="header-section-number">11.7.1</span> Research questions</h3>
+<p>Example questions are:</p>
+<ul>
+<li><strong>RQ1:</strong> Does adaptive coordination improve mission achievement in normal operation?</li>
+<li><strong>RQ2:</strong> Does it retain more performance and recover faster during disruptions?</li>
+<li><strong>RQ3:</strong> How sensitive are conclusions to objective weights, reasoning modes, and random seeds?</li>
+<li><strong>RQ4:</strong> Which stakeholders benefit or lose when aggregate performance changes?</li>
+</ul>
+</section>
+<section id="comparators-and-ablations" class="level3" data-number="11.7.2">
+<h3 data-number="11.7.2" class="anchored" data-anchor-id="comparators-and-ablations"><span class="header-section-number">11.7.2</span> Comparators and ablations</h3>
+<p>Use matched conditions for baseline, SOTA, and TISE. Add ablations that remove one proposed component at a time where feasible. Compare against the strongest relevant comparator, not an intentionally weak baseline.</p>
+</section>
+<section id="scenarios-and-parameters" class="level3" data-number="11.7.3">
+<h3 data-number="11.7.3" class="anchored" data-anchor-id="scenarios-and-parameters"><span class="header-section-number">11.7.3</span> Scenarios and parameters</h3>
+<p>Report normal operation plus named disruptions, including onset, duration, severity, and recovery. Provide a parameter table with symbol, meaning, unit, value or range, and justification. Separate measured values, literature-derived values, calibrated values, and assumptions.</p>
+</section>
+<section id="reproducibility" class="level3" data-number="11.7.4">
+<h3 data-number="11.7.4" class="anchored" data-anchor-id="reproducibility"><span class="header-section-number">11.7.4</span> Reproducibility</h3>
+<p>For this repository, a minimum matched run is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m simulation <span class="op">--</span>architecture baseline <span class="op">--</span>reasoning probabilistic <span class="op">--</span>steps <span class="dv">24</span> <span class="op">--</span>seed <span class="dv">42</span> <span class="op">--</span>output results<span class="op">/</span>baseline<span class="op">.</span><span class="fu">csv</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m simulation <span class="op">--</span>architecture sota <span class="op">--</span>reasoning probabilistic <span class="op">--</span>steps <span class="dv">24</span> <span class="op">--</span>seed <span class="dv">42</span> <span class="op">--</span>output results<span class="op">/</span>sota<span class="op">.</span><span class="fu">csv</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">-</span>m simulation <span class="op">--</span>architecture tise <span class="op">--</span>reasoning probabilistic <span class="op">--</span>steps <span class="dv">24</span> <span class="op">--</span>seed <span class="dv">42</span> <span class="op">--</span>output results<span class="op">/</span>tise<span class="op">.</span><span class="fu">csv</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Repeat stochastic conditions over multiple declared seeds. Record the software version, commit identifier, operating environment, dependencies, run command, configuration, raw outputs, and analysis script. If an external AI model is involved, also record provider, model identifier, prompt version, sampling settings, failures, fallbacks, and access date.</p>
+</section>
+<section id="metrics-and-analysis" class="level3" data-number="11.7.5">
+<h3 data-number="11.7.5" class="anchored" data-anchor-id="metrics-and-analysis"><span class="header-section-number">11.7.5</span> Metrics and analysis</h3>
+<p>Declare one primary metric before inspecting results. Secondary metrics can include stakeholder utility, total value, mission achievement, constraint violations, equity, retention, recovery time, cumulative loss, and computation time.</p>
+<p>Report:</p>
+<ul>
+<li>sample size and unit of analysis;</li>
+<li>mean or median as appropriate;</li>
+<li>dispersion or confidence intervals;</li>
+<li>absolute and relative effect sizes;</li>
+<li>statistical test and assumptions, if inferential tests are used; and</li>
+<li>sensitivity and worst-case behavior.</li>
+</ul>
+<p>Seeds are repeated simulation realizations, not automatically independent real-world observations. Avoid using a small simulation p-value as proof that the real system will behave identically.</p>
+</section>
+</section>
+<section id="vi.-results" class="level2" data-number="11.8">
+<h2 data-number="11.8" class="anchored" data-anchor-id="vi.-results"><span class="header-section-number">11.8</span> VI. Results</h2>
+<p>Organize results by research question rather than by file or program module. Begin each subsection with the answer, then show the evidence.</p>
+<p>Recommended order:</p>
+<ol type="1">
+<li>verification and sanity checks;</li>
+<li>primary comparison under normal conditions;</li>
+<li>disruption and resilience results;</li>
+<li>stakeholder-level distributional effects;</li>
+<li>ablation and sensitivity analysis; and</li>
+<li>failure cases and computational cost.</li>
+</ol>
+<p>Good result sentence:</p>
+<blockquote class="blockquote">
+<p>Across 30 matched seeds, TISE increased median mission achievement from 0.71 to 0.79 (absolute difference 0.08; 95% bootstrap CI [0.05, 0.11]) relative to the strongest fixed-contract comparator.</p>
+</blockquote>
+<p>Replace the values with actual outputs. Do not use placeholders in a submitted manuscript.</p>
+<p>Each table or figure should answer one question and remain understandable from its caption. Avoid repeating every table value in prose; state the pattern, magnitude, uncertainty, and exception.</p>
+</section>
+<section id="vii.-discussion-and-validity" class="level2" data-number="11.9">
+<h2 data-number="11.9" class="anchored" data-anchor-id="vii.-discussion-and-validity"><span class="header-section-number">11.9</span> VII. Discussion and validity</h2>
+<p>The discussion explains what the results mean and why they occurred. A useful order is:</p>
+<ol type="1">
+<li>answer each research question;</li>
+<li>explain the observed mechanism;</li>
+<li>compare the result with prior work;</li>
+<li>discuss practical significance and stakeholder tradeoffs;</li>
+<li>report failure cases; and</li>
+<li>bound generalization.</li>
+</ol>
+<p>Address validity explicitly:</p>
+<ul>
+<li><strong>Construct validity:</strong> Do the metrics represent mission, value, resilience, and equity?</li>
+<li><strong>Internal validity:</strong> Are comparison differences caused by the treatment rather than unequal information or parameters?</li>
+<li><strong>External validity:</strong> Which conclusions may transfer beyond this campus and which depend on local assumptions?</li>
+<li><strong>Conclusion validity:</strong> Are there enough runs, appropriate summaries, and robust effects?</li>
+</ul>
+<p>Simulation validates consequences of the encoded assumptions. Real-world claims require calibration, observational evidence, expert review, field trials, or other external validation.</p>
+</section>
+<section id="viii.-conclusion" class="level2" data-number="11.10">
+<h2 data-number="11.10" class="anchored" data-anchor-id="viii.-conclusion"><span class="header-section-number">11.10</span> VIII. Conclusion</h2>
+<p>Use three short moves:</p>
+<ol type="1">
+<li>restate the problem and technical response;</li>
+<li>report the main quantitative finding; and</li>
+<li>state the bounded implication and next evidence needed.</li>
+</ol>
+<p>Do not introduce a new method, citation, limitation, or result in the conclusion.</p>
+</section>
+</section>
+<section id="turn-simulation-outputs-into-publication-evidence" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Turn simulation outputs into publication evidence</h1>
+<p>Use a traceable evidence pipeline:</p>
+<pre class="text"><code>case assumptions -&gt; configuration -&gt; simulation runs -&gt; raw data
+                 -&gt; analysis script -&gt; tables/figures -&gt; manuscript claim</code></pre>
+<p>Keep the following artifacts together:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Artifact</th>
+<th>Minimum contents</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Configuration</td>
+<td>Parameters, scenarios, objectives, constraints, seeds</td>
+</tr>
+<tr class="even">
+<td>Raw results</td>
+<td>One tidy row per run, time step, stakeholder, or declared unit</td>
+</tr>
+<tr class="odd">
+<td>Analysis</td>
+<td>Script or notebook that produces every reported statistic</td>
+</tr>
+<tr class="even">
+<td>Figures/tables</td>
+<td>Stable identifiers matching manuscript references</td>
+</tr>
+<tr class="odd">
+<td>Run manifest</td>
+<td>Command, timestamp, code version, environment, failures</td>
+</tr>
+</tbody>
+</table>
+<p>Before trusting the experiment, test invariants such as nonnegative stocks, capacity bounds, conservation equations, permitted state transitions, and deterministic replay under a fixed seed.</p>
+</section>
+<section id="figures-and-tables-for-a-compact-ieee-paper" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Figures and tables for a compact IEEE paper</h1>
+<p>A strong minimum set is:</p>
+<ol type="1">
+<li><strong>System boundary and stakeholder exchange figure</strong> – what is modeled.</li>
+<li><strong>Method or control-loop figure</strong> – what is proposed.</li>
+<li><strong>Experimental matrix table</strong> – what was compared.</li>
+<li><strong>Main performance figure or table</strong> – whether the primary claim is supported.</li>
+<li><strong>Resilience or sensitivity figure</strong> – whether the result survives difficult conditions.</li>
+</ol>
+<p>Use vector output for diagrams and plots when possible. Ensure axes include quantities and units, legends remain readable in a two-column layout, colors remain distinguishable when printed in grayscale, and captions state the takeaway rather than merely naming the object.</p>
+</section>
+<section id="ieee-style-quarto-starter" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> IEEE-style Quarto starter</h1>
+<p>This repository includes a local IEEE Quarto format under <code>ieee/</code>. A minimal manuscript header is:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span><span class="kw">:</span><span class="at"> </span><span class="st">"Adaptive Multi-Stakeholder Coordination for Campus Food Ecosystems"</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ieee-pdf</span><span class="kw">:</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">keep-tex</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">ieee-html</span><span class="kw">:</span><span class="at"> default</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="fu">author</span><span class="kw">:</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Author Name"</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">affiliations</span><span class="kw">:</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="kw">-</span><span class="at"> </span><span class="fu">name</span><span class="kw">:</span><span class="at"> </span><span class="st">"Institution Name"</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">email</span><span class="kw">:</span><span class="at"> </span><span class="st">"author@example.org"</span></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abstract</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>  Replace this text after the results are final.</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fu">keywords</span><span class="kw">:</span><span class="at"> </span><span class="kw">[</span><span class="at">digital twin</span><span class="kw">,</span><span class="at"> multi-stakeholder systems</span><span class="kw">,</span><span class="at"> simulation</span><span class="kw">,</span><span class="at"> resilience</span><span class="kw">]</span></span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="fu">bibliography</span><span class="kw">:</span><span class="at"> bibliography.bib</span></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="pp">---</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Place the source inside <code>ieee/</code> so the local extension is available, then render from the project root:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>quarto render ieee<span class="op">/</span>your-paper<span class="op">.</span><span class="fu">qmd</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Use citation keys from the BibTeX file, for example <code>[@citationKey]</code>, and cross-reference labeled items such as <code>@fig-architecture</code>, <code>@tbl-experiments</code>, and <code>@eq-objective</code>. Inspect the generated PDF for overflow, illegible labels, orphan headings, and references that extend beyond a column.</p>
+</section>
+<section id="a-practical-writing-sequence" class="level1" data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> A practical writing sequence</h1>
+<p>Do not begin by polishing the introduction. Use this order:</p>
+<ol type="1">
+<li>Freeze the case boundary, research questions, comparators, and primary metric.</li>
+<li>Complete verification tests and the experiment matrix.</li>
+<li>Generate final tables and figures from scripts.</li>
+<li>Write the Results section without interpretation beyond the evidence.</li>
+<li>Write Experimental Method so every result is reproducible.</li>
+<li>Write the Method and Problem Formulation.</li>
+<li>Write Discussion and threats to validity.</li>
+<li>Write Related Work and Introduction around the demonstrated gap.</li>
+<li>Write the Conclusion, title, and abstract last.</li>
+<li>Perform technical, argument, language, and format reviews separately.</li>
+</ol>
+</section>
+<section id="final-review-checklist" class="level1" data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span> Final review checklist</h1>
+<section id="research-argument" class="level2" data-number="16.1">
+<h2 data-number="16.1" class="anchored" data-anchor-id="research-argument"><span class="header-section-number">16.1</span> Research argument</h2>
+<ul>
+<li>Is there one explicit research question and one primary claim?</li>
+<li>Does each contribution have visible evidence?</li>
+<li>Is the closest prior work compared fairly?</li>
+<li>Are claims bounded to the modeled case and tested conditions?</li>
+</ul>
+</section>
+<section id="experimental-integrity" class="level2" data-number="16.2">
+<h2 data-number="16.2" class="anchored" data-anchor-id="experimental-integrity"><span class="header-section-number">16.2</span> Experimental integrity</h2>
+<ul>
+<li>Are comparators run with matched information, parameters, scenarios, and seeds?</li>
+<li>Are parameters sourced or labeled as assumptions?</li>
+<li>Are verification, uncertainty, ablation, sensitivity, and failure cases reported?</li>
+<li>Can every reported number be regenerated from stored data and code?</li>
+<li>Are stakeholder-level effects reported alongside aggregate outcomes?</li>
+</ul>
+</section>
+<section id="manuscript-quality" class="level2" data-number="16.3">
+<h2 data-number="16.3" class="anchored" data-anchor-id="manuscript-quality"><span class="header-section-number">16.3</span> Manuscript quality</h2>
+<ul>
+<li>Are all acronyms defined at first use?</li>
+<li>Does every symbol have a meaning and unit?</li>
+<li>Does every figure and table have a takeaway caption and a textual reference?</li>
+<li>Are citations complete and generated from the bibliography rather than typed manually?</li>
+<li>Does the abstract contain the actual principal numerical result?</li>
+</ul>
+</section>
+<section id="submission" class="level2" data-number="16.4">
+<h2 data-number="16.4" class="anchored" data-anchor-id="submission"><span class="header-section-number">16.4</span> Submission</h2>
+<ul>
+<li>Does the manuscript match the selected venue’s scope and current author instructions?</li>
+<li>Are page limit, anonymity, ethics, conflict, funding, and data/code declarations satisfied?</li>
+<li>Are fonts embedded and figures legible in the final two-column PDF?</li>
+<li>Have all comments, placeholders, tracked changes, and identifying metadata been handled?</li>
+<li>Has every author reviewed and approved the final manuscript?</li>
+</ul>
+</section>
+</section>
+<section id="one-page-planning-worksheet" class="level1" data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> One-page planning worksheet</h1>
+<p>Complete this before drafting:</p>
+<pre class="text"><code>Application and boundary:
+Engineering problem:
+Closest existing approach:
+Specific unresolved gap:
+Proposed method:
+Primary research question:
+Primary metric:
+Strongest comparator:
+Normal scenario:
+Disruption scenarios:
+Main hard constraints:
+Number of runs/seeds:
+Planned ablations:
+Main validity risk:
+Evidence needed beyond simulation:
+Expected contribution 1 -&gt; evidence:
+Expected contribution 2 -&gt; evidence:
+Expected contribution 3 -&gt; evidence:</code></pre>
+<p>If a line cannot be completed precisely, that is useful diagnostic information: the study design needs attention before the prose does.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./05-capstone.html" class="pagination-link" aria-label="Capstone Project">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capstone Project</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./instructor-guide.html" class="pagination-link" aria-label="Instructor Guide">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Instructor Guide</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

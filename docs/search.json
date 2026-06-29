@@ -540,173 +540,353 @@
     ]
   },
   {
+    "objectID": "06-ieee-paper-writing.html",
+    "href": "06-ieee-paper-writing.html",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "",
+    "text": "7 Purpose and outcome\nThis tutorial turns an engineering application case and its simulation into a focused, reproducible IEEE-style paper. The running example is the sustainable campus food ecosystem developed in this course, but the workflow also applies to transportation, health care, energy, education, and other engineered systems.\nThe key move is to treat the case and the simulation as evidence for a research claim, not as the paper’s claim by themselves. A publishable paper does more than describe an application or report program output. It states a gap, proposes a technical response, tests that response fairly, and limits its conclusions to what the evidence supports.\nAt the end of the tutorial, you should have:",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#convert-the-application-into-a-research-problem",
+    "href": "06-ieee-paper-writing.html#convert-the-application-into-a-research-problem",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "8.1 Convert the application into a research problem",
+    "text": "8.1 Convert the application into a research problem\nDescribe the application in five lines before writing prose:\n\n\n\n\n\n\n\n\nElement\nQuestion\nCampus food example\n\n\n\n\nPublic need\nWhat outcome matters, and to whom?\nAffordable, safe, nutritious food for the campus community\n\n\nSystem boundary\nWhich place, actors, flows, and time horizon are modeled?\nOne campus, its consumers, vendors, suppliers, operator, and governance actors\n\n\nTechnical difficulty\nWhy do existing methods struggle?\nStakeholders have different missions and disruptions change feasible exchanges\n\n\nProposed response\nWhat mechanism is introduced?\nAdaptive PUDAL coordination of stakeholder MIGs and PSKVE exchanges\n\n\nTestable consequence\nWhat should improve if it works?\nMission achievement and value retention improve without violating hard constraints\n\n\n\nA research problem is stronger than a topic. “AI for campus food” is a topic. The following is testable:\n\nFixed coordination rules cannot respond to changing stakeholder missions and resource disruptions; therefore, this study tests whether adaptive multi-stakeholder coordination improves mission achievement and resilience under controlled, matched simulation conditions.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#write-the-claim-before-the-manuscript",
+    "href": "06-ieee-paper-writing.html#write-the-claim-before-the-manuscript",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "8.2 Write the claim before the manuscript",
+    "text": "8.2 Write the claim before the manuscript\nUse this pattern:\n\nFor [bounded application and conditions], the proposed [method] improves [primary outcomes] relative to [credible comparator], as measured by [declared metrics], while satisfying [constraints].\n\nExample:\n\nFor a simulated campus food ecosystem under normal and supply-disruption scenarios, adaptive TISE coordination improves aggregate mission achievement and performance retention relative to baseline and fixed-contract coordination, while preserving stakeholder safety and resource constraints.\n\nThis statement is a hypothesis until results support it. If the simulation does not support it, revise the claim rather than hiding inconvenient results.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#build-a-claimevidence-map",
+    "href": "06-ieee-paper-writing.html#build-a-claimevidence-map",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "8.3 Build a claim–evidence map",
+    "text": "8.3 Build a claim–evidence map\nEvery contribution must point to an artifact or result.\n\n\n\n\n\n\n\n\nProposed contribution\nRequired evidence\nLikely paper location\n\n\n\n\nFormal ecosystem representation\nDefined stakeholders, missions, variables, exchanges, and constraints\nMethod/model\n\n\nAdaptive coordination method\nAlgorithm, inputs, outputs, objective, and complexity or execution details\nMethod\n\n\nReusable simulation testbed\nArchitecture, parameters, scenarios, seeds, and code availability\nExperimental setup\n\n\nPerformance or resilience improvement\nMatched comparisons, uncertainty, effect sizes, and sensitivity tests\nResults\n\n\n\nRemove a claimed contribution if the paper provides no direct evidence for it.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#title",
+    "href": "06-ieee-paper-writing.html#title",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.1 Title",
+    "text": "11.1 Title\nMake the title specific enough to reveal the method, problem, and evidence type. Avoid claims such as “optimal,” “intelligent,” or “superior” unless they are precisely established.\nUseful pattern:\n\n[Method]: [Technical purpose] for [application], evaluated through [evidence]\n\nExample:\n\nAdaptive Multi-Stakeholder Coordination for Campus Food Ecosystems: A Digital-Twin Simulation Study",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#abstract",
+    "href": "06-ieee-paper-writing.html#abstract",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.2 Abstract",
+    "text": "11.2 Abstract\nWrite the abstract after the results are final. Use five moves in one paragraph:\n\nContext: one sentence explaining why the problem matters.\nGap: one sentence naming the unresolved technical limitation.\nMethod: one or two sentences describing what was built.\nEvaluation: one sentence stating comparators, scenarios, metrics, and scale.\nResult and meaning: one or two sentences with the principal numerical result and a bounded conclusion.\n\nTemplate:\n\n[Context]. However, [specific limitation in existing approaches]. This paper proposes [method and essential mechanism]. We evaluate it in [application/model] against [comparators] across [scenarios, seeds, or conditions], using [primary metrics]. The proposed method achieves [main result with value and uncertainty] and [secondary result]. These findings indicate [bounded implication], although [important limitation, if needed].\n\nDo not place citations, undefined abbreviations, background surveys, or unreported promises in the abstract.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#i.-introduction",
+    "href": "06-ieee-paper-writing.html#i.-introduction",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.3 I. Introduction",
+    "text": "11.3 I. Introduction\nA reliable six-paragraph introduction is:\n\nEstablish the real engineering need and its consequences.\nExplain the technical difficulty, not merely the domain importance.\nSummarize the closest solution families.\nState precisely what remains unresolved.\nPresent the proposed response and evaluation logic.\nList two to four verifiable contributions and preview the paper.\n\nContribution template:\n\nThe principal contributions are:\n\na formal [model] that represents [previously missing capability];\nan adaptive [algorithm/mechanism] that [technical action] subject to [constraints]; and\na reproducible evaluation against [comparators] over [conditions], showing [supported result, added only after analysis].\n\n\nDo not use “The paper is novel” as evidence of novelty. The comparison with prior work must make that case.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#ii.-related-work",
+    "href": "06-ieee-paper-writing.html#ii.-related-work",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.4 II. Related Work",
+    "text": "11.4 II. Related Work\nOrganize related work by technical approach, not one paragraph per paper. For this study, useful groups might be mission-oriented engineering, multi-agent or multi-stakeholder coordination, digital twins, smart contracts, and resilience evaluation.\nFor each group, answer:\n\nWhat problem does the approach solve?\nWhat information and assumptions does it require?\nWhat does it optimize or guarantee?\nWhat remains unavailable for this paper’s problem?\n\nEnd with a synthesis table whose columns encode the capabilities needed by the proposed claim. Cite original papers and authoritative standards where possible. A missing citation is not automatically a research gap; demonstrate that the missing capability matters technically.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#iii.-application-case-and-problem-formulation",
+    "href": "06-ieee-paper-writing.html#iii.-application-case-and-problem-formulation",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.5 III. Application Case and Problem Formulation",
+    "text": "11.5 III. Application Case and Problem Formulation\nSeparate the real-world narrative from the mathematical abstraction.\nFirst, define:\n\npopulation, location, time step, and study horizon;\nstakeholder roles and decision authority;\nresources, outputs, exchanges, and external inputs;\nnormal operation and disruption boundaries; and\nexclusions and assumptions.\n\nThen formalize the model. At minimum identify:\n[ ={s_1,,s_n}, _t=, _t=, _t=. ]\nState the transition, objective, and constraints:\n[ _{t+1}=f(_t,_t,_t), ]\n[ {{0:T}} J={t=0}^{T}{i}w_i U_i(_t,_t), ]\nsubject to safety, capacity, conservation, fairness, and governance constraints. Define every symbol, unit, range, and data source. If weights express a policy preference rather than an observed fact, say so.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#iv.-proposed-method",
+    "href": "06-ieee-paper-writing.html#iv.-proposed-method",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.6 IV. Proposed Method",
+    "text": "11.6 IV. Proposed Method\nExplain the method in the order a reader would implement it:\n\ninputs and their availability at decision time;\nstate estimation or preprocessing;\nrecommendation or optimization step;\nconstraint checking and human authorization;\nstate update and recorded outputs; and\nstopping or fallback behavior.\n\nInclude one architecture figure and one algorithm listing. The text should explain why each operation is necessary; the pseudocode should explain how the operations are sequenced.\nDistinguish clearly among:\n\nbaseline operation;\nthe strongest credible fixed or state-of-the-art comparator; and\nthe proposed adaptive method.\n\nDo not give the proposed method extra information, a better reasoner, or looser constraints unless that difference is itself the treatment being studied.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#v.-experimental-method",
+    "href": "06-ieee-paper-writing.html#v.-experimental-method",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.7 V. Experimental Method",
+    "text": "11.7 V. Experimental Method\nWrite this section as a protocol that another researcher could repeat.\n\n11.7.1 Research questions\nExample questions are:\n\nRQ1: Does adaptive coordination improve mission achievement in normal operation?\nRQ2: Does it retain more performance and recover faster during disruptions?\nRQ3: How sensitive are conclusions to objective weights, reasoning modes, and random seeds?\nRQ4: Which stakeholders benefit or lose when aggregate performance changes?\n\n\n\n11.7.2 Comparators and ablations\nUse matched conditions for baseline, SOTA, and TISE. Add ablations that remove one proposed component at a time where feasible. Compare against the strongest relevant comparator, not an intentionally weak baseline.\n\n\n11.7.3 Scenarios and parameters\nReport normal operation plus named disruptions, including onset, duration, severity, and recovery. Provide a parameter table with symbol, meaning, unit, value or range, and justification. Separate measured values, literature-derived values, calibrated values, and assumptions.\n\n\n11.7.4 Reproducibility\nFor this repository, a minimum matched run is:\npython -m simulation --architecture baseline --reasoning probabilistic --steps 24 --seed 42 --output results/baseline.csv\npython -m simulation --architecture sota --reasoning probabilistic --steps 24 --seed 42 --output results/sota.csv\npython -m simulation --architecture tise --reasoning probabilistic --steps 24 --seed 42 --output results/tise.csv\nRepeat stochastic conditions over multiple declared seeds. Record the software version, commit identifier, operating environment, dependencies, run command, configuration, raw outputs, and analysis script. If an external AI model is involved, also record provider, model identifier, prompt version, sampling settings, failures, fallbacks, and access date.\n\n\n11.7.5 Metrics and analysis\nDeclare one primary metric before inspecting results. Secondary metrics can include stakeholder utility, total value, mission achievement, constraint violations, equity, retention, recovery time, cumulative loss, and computation time.\nReport:\n\nsample size and unit of analysis;\nmean or median as appropriate;\ndispersion or confidence intervals;\nabsolute and relative effect sizes;\nstatistical test and assumptions, if inferential tests are used; and\nsensitivity and worst-case behavior.\n\nSeeds are repeated simulation realizations, not automatically independent real-world observations. Avoid using a small simulation p-value as proof that the real system will behave identically.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#vi.-results",
+    "href": "06-ieee-paper-writing.html#vi.-results",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.8 VI. Results",
+    "text": "11.8 VI. Results\nOrganize results by research question rather than by file or program module. Begin each subsection with the answer, then show the evidence.\nRecommended order:\n\nverification and sanity checks;\nprimary comparison under normal conditions;\ndisruption and resilience results;\nstakeholder-level distributional effects;\nablation and sensitivity analysis; and\nfailure cases and computational cost.\n\nGood result sentence:\n\nAcross 30 matched seeds, TISE increased median mission achievement from 0.71 to 0.79 (absolute difference 0.08; 95% bootstrap CI [0.05, 0.11]) relative to the strongest fixed-contract comparator.\n\nReplace the values with actual outputs. Do not use placeholders in a submitted manuscript.\nEach table or figure should answer one question and remain understandable from its caption. Avoid repeating every table value in prose; state the pattern, magnitude, uncertainty, and exception.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#vii.-discussion-and-validity",
+    "href": "06-ieee-paper-writing.html#vii.-discussion-and-validity",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.9 VII. Discussion and validity",
+    "text": "11.9 VII. Discussion and validity\nThe discussion explains what the results mean and why they occurred. A useful order is:\n\nanswer each research question;\nexplain the observed mechanism;\ncompare the result with prior work;\ndiscuss practical significance and stakeholder tradeoffs;\nreport failure cases; and\nbound generalization.\n\nAddress validity explicitly:\n\nConstruct validity: Do the metrics represent mission, value, resilience, and equity?\nInternal validity: Are comparison differences caused by the treatment rather than unequal information or parameters?\nExternal validity: Which conclusions may transfer beyond this campus and which depend on local assumptions?\nConclusion validity: Are there enough runs, appropriate summaries, and robust effects?\n\nSimulation validates consequences of the encoded assumptions. Real-world claims require calibration, observational evidence, expert review, field trials, or other external validation.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#viii.-conclusion",
+    "href": "06-ieee-paper-writing.html#viii.-conclusion",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "11.10 VIII. Conclusion",
+    "text": "11.10 VIII. Conclusion\nUse three short moves:\n\nrestate the problem and technical response;\nreport the main quantitative finding; and\nstate the bounded implication and next evidence needed.\n\nDo not introduce a new method, citation, limitation, or result in the conclusion.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#research-argument",
+    "href": "06-ieee-paper-writing.html#research-argument",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "16.1 Research argument",
+    "text": "16.1 Research argument\n\nIs there one explicit research question and one primary claim?\nDoes each contribution have visible evidence?\nIs the closest prior work compared fairly?\nAre claims bounded to the modeled case and tested conditions?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#experimental-integrity",
+    "href": "06-ieee-paper-writing.html#experimental-integrity",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "16.2 Experimental integrity",
+    "text": "16.2 Experimental integrity\n\nAre comparators run with matched information, parameters, scenarios, and seeds?\nAre parameters sourced or labeled as assumptions?\nAre verification, uncertainty, ablation, sensitivity, and failure cases reported?\nCan every reported number be regenerated from stored data and code?\nAre stakeholder-level effects reported alongside aggregate outcomes?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#manuscript-quality",
+    "href": "06-ieee-paper-writing.html#manuscript-quality",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "16.3 Manuscript quality",
+    "text": "16.3 Manuscript quality\n\nAre all acronyms defined at first use?\nDoes every symbol have a meaning and unit?\nDoes every figure and table have a takeaway caption and a textual reference?\nAre citations complete and generated from the bibliography rather than typed manually?\nDoes the abstract contain the actual principal numerical result?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
+    "objectID": "06-ieee-paper-writing.html#submission",
+    "href": "06-ieee-paper-writing.html#submission",
+    "title": "6  Writing an IEEE Paper from an Application Case and Simulation",
+    "section": "16.4 Submission",
+    "text": "16.4 Submission\n\nDoes the manuscript match the selected venue’s scope and current author instructions?\nAre page limit, anonymity, ethics, conflict, funding, and data/code declarations satisfied?\nAre fonts embedded and figures legible in the final two-column PDF?\nHave all comments, placeholders, tracked changes, and identifying metadata been handled?\nHas every author reviewed and approved the final manuscript?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Writing an IEEE Paper from an Application Case and Simulation</span>"
+    ]
+  },
+  {
     "objectID": "instructor-guide.html",
     "href": "instructor-guide.html",
-    "title": "6  Instructor Guide",
+    "title": "7  Instructor Guide",
     "section": "",
-    "text": "6.1 Teaching approach\nUse one concept–artifact–code loop in every session:\nAvoid beginning with the AI provider. Learners should first produce a coherent baseline using historical reasoning. Otherwise, model-generated decisions can conceal missing missions, invalid accounts, or undefined objectives.",
+    "text": "7.1 Teaching approach\nUse one concept–artifact–code loop in every session:\nAvoid beginning with the AI provider. Learners should first produce a coherent baseline using historical reasoning. Otherwise, model-generated decisions can conceal missing missions, invalid accounts, or undefined objectives.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#teaching-approach",
     "href": "instructor-guide.html#teaching-approach",
-    "title": "6  Instructor Guide",
+    "title": "7  Instructor Guide",
     "section": "",
     "text": "introduce one MOEE concept;\nproduce one modeling artifact;\nconnect the artifact to one Python class;\ntest one claim; and\nreflect on stakeholder and validity implications.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#suggested-class-pattern",
     "href": "instructor-guide.html#suggested-class-pattern",
-    "title": "6  Instructor Guide",
-    "section": "6.2 Suggested class pattern",
-    "text": "6.2 Suggested class pattern\n\n20 minutes: concept and worked example\n25 minutes: team modeling exercise\n25 minutes: Python lab\n15 minutes: comparison and critique\n5 minutes: exit ticket",
+    "title": "7  Instructor Guide",
+    "section": "7.2 Suggested class pattern",
+    "text": "7.2 Suggested class pattern\n\n20 minutes: concept and worked example\n25 minutes: team modeling exercise\n25 minutes: Python lab\n15 minutes: comparison and critique\n5 minutes: exit ticket",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#lab-progression",
     "href": "instructor-guide.html#lab-progression",
-    "title": "6  Instructor Guide",
-    "section": "6.3 Lab progression",
-    "text": "6.3 Lab progression\n\nlab01_baseline.py: validate execution and VOMR updates.\nlab02_compare_architectures.py: isolate coordination effects.\nlab03_agentic_tise.py: add a provider behind an interface.\nlab04_custom_case.py: transfer MOEE to elderly home-care coordination.",
+    "title": "7  Instructor Guide",
+    "section": "7.3 Lab progression",
+    "text": "7.3 Lab progression\n\nlab01_baseline.py: validate execution and VOMR updates.\nlab02_compare_architectures.py: isolate coordination effects.\nlab03_agentic_tise.py: add a provider behind an interface.\nlab04_custom_case.py: transfer MOEE to elderly home-care coordination.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#discussion-prompts",
     "href": "instructor-guide.html#discussion-prompts",
-    "title": "6  Instructor Guide",
-    "section": "6.4 Discussion prompts",
-    "text": "6.4 Discussion prompts\n\nWho is authorized to define the ecosystem objective?\nWhen is a smart contract preferable to adaptive control?\nWhich intelligence channel is absent from the available data?\nWhat should PUDAL recommend but never execute automatically?\nHow should a stakeholder reject or renegotiate a recommendation?",
+    "title": "7  Instructor Guide",
+    "section": "7.4 Discussion prompts",
+    "text": "7.4 Discussion prompts\n\nWho is authorized to define the ecosystem objective?\nWhen is a smart contract preferable to adaptive control?\nWhich intelligence channel is absent from the available data?\nWhat should PUDAL recommend but never execute automatically?\nHow should a stakeholder reject or renegotiate a recommendation?",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#safety-notes",
     "href": "instructor-guide.html#safety-notes",
-    "title": "6  Instructor Guide",
-    "section": "6.5 Safety notes",
-    "text": "6.5 Safety notes\nHealth care, elderly services, education involving minors, and regulated transportation require stronger safeguards than the toy simulator provides. Treat the package as a research and teaching instrument. It lacks production identity, privacy, consent, security, clinical, legal, and operational-assurance controls.",
+    "title": "7  Instructor Guide",
+    "section": "7.5 Safety notes",
+    "text": "7.5 Safety notes\nHealth care, elderly services, education involving minors, and regulated transportation require stronger safeguards than the toy simulator provides. Treat the package as a research and teaching instrument. It lacks production identity, privacy, consent, security, clinical, legal, and operational-assurance controls.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "instructor-guide.html#instructor-setup",
     "href": "instructor-guide.html#instructor-setup",
-    "title": "6  Instructor Guide",
-    "section": "6.6 Instructor setup",
-    "text": "6.6 Instructor setup\nBefore class:\npython -m unittest discover -s simulation/tests -v\npython -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 6\nquarto render course\nUse the heuristic provider for guaranteed offline delivery. Demonstrate an external provider only when credentials, network access, cost controls, and data policy are already approved.",
+    "title": "7  Instructor Guide",
+    "section": "7.6 Instructor setup",
+    "text": "7.6 Instructor setup\nBefore class:\npython -m unittest discover -s simulation/tests -v\npython -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 6\nquarto render course\nUse the heuristic provider for guaranteed offline delivery. Demonstrate an external provider only when credentials, network access, cost controls, and data policy are already approved.",
     "crumbs": [
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Instructor Guide</span>"
     ]
   },
   {
     "objectID": "worksheets.html",
     "href": "worksheets.html",
-    "title": "7  Modeling Worksheets",
+    "title": "8  Modeling Worksheets",
     "section": "",
-    "text": "7.1 Case boundary\nCopy these tables into a case report or spreadsheet.",
+    "text": "8.1 Case boundary\nCopy these tables into a case report or spreadsheet.",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#case-boundary",
     "href": "worksheets.html#case-boundary",
-    "title": "7  Modeling Worksheets",
+    "title": "8  Modeling Worksheets",
     "section": "",
     "text": "Field\nEntry\n\n\n\n\nPublic need\n\n\n\nBeneficiary population\n\n\n\nPlace/system boundary\n\n\n\nTime step and horizon\n\n\n\nIncluded processes\n\n\n\nExplicit exclusions\n\n\n\nDecision owner",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#stakeholder-registry",
     "href": "worksheets.html#stakeholder-registry",
-    "title": "7  Modeling Worksheets",
-    "section": "7.2 Stakeholder registry",
-    "text": "7.2 Stakeholder registry\n\n\n\n\n\n\n\n\n\n\n\n\nID\nName\nRole\nMission\nHard constraints\nDecisions\nData available\n\n\n\n\n\n\nUser/source/regulator/operator",
+    "title": "8  Modeling Worksheets",
+    "section": "8.2 Stakeholder registry",
+    "text": "8.2 Stakeholder registry\n\n\n\n\n\n\n\n\n\n\n\n\nID\nName\nRole\nMission\nHard constraints\nDecisions\nData available\n\n\n\n\n\n\nUser/source/regulator/operator",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#vomr-accounts",
     "href": "worksheets.html#vomr-accounts",
-    "title": "7  Modeling Worksheets",
-    "section": "7.3 VOMR accounts",
-    "text": "7.3 VOMR accounts\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nAccount\nSymbol\nUnit\nOpening value\nUpdate event\nUpdate equation\n\n\n\n\n\nValue\n\n\n\n\n\n\n\n\nOutput\n\n\n\n\n\n\n\n\nMission\n\n\n\n\n\n\n\n\nResources",
+    "title": "8  Modeling Worksheets",
+    "section": "8.3 VOMR accounts",
+    "text": "8.3 VOMR accounts\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nAccount\nSymbol\nUnit\nOpening value\nUpdate event\nUpdate equation\n\n\n\n\n\nValue\n\n\n\n\n\n\n\n\nOutput\n\n\n\n\n\n\n\n\nMission\n\n\n\n\n\n\n\n\nResources",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#pskve-exchanges",
     "href": "worksheets.html#pskve-exchanges",
-    "title": "7  Modeling Worksheets",
-    "section": "7.4 PSKVE exchanges",
-    "text": "7.4 PSKVE exchanges\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource\nDestination\nProduct\nService\nKnowledge\nValues\nEnvironment\nTrigger",
+    "title": "8  Modeling Worksheets",
+    "section": "8.4 PSKVE exchanges",
+    "text": "8.4 PSKVE exchanges\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource\nDestination\nProduct\nService\nKnowledge\nValues\nEnvironment\nTrigger",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#mig-specification",
     "href": "worksheets.html#mig-specification",
-    "title": "7  Modeling Worksheets",
-    "section": "7.5 MIG specification",
-    "text": "7.5 MIG specification\n\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nMIG meaning\nTime unit\nZero\nOne\nInputs\nHard limits\nReasoning mode",
+    "title": "8  Modeling Worksheets",
+    "section": "8.5 MIG specification",
+    "text": "8.5 MIG specification\n\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nMIG meaning\nTime unit\nZero\nOne\nInputs\nHard limits\nReasoning mode",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#setup-specification",
     "href": "worksheets.html#setup-specification",
-    "title": "7  Modeling Worksheets",
-    "section": "7.6 Setup specification",
-    "text": "7.6 Setup specification\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nSetup operator\nNegotiated before run\nMay adapt during run\nAuthority and consent\nObjective\n\n\n\n\nBaseline\nIndependent\nN/A\nNo\nStakeholder\nLocal\n\n\nSOTA\nSmart contract\nYes\nNo\nContract parties\n\n\n\nTISE\nAdaptive PUDAL\nInitial policy\nYes\nCooperative governance",
+    "title": "8  Modeling Worksheets",
+    "section": "8.6 Setup specification",
+    "text": "8.6 Setup specification\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nSetup operator\nNegotiated before run\nMay adapt during run\nAuthority and consent\nObjective\n\n\n\n\nBaseline\nIndependent\nN/A\nNo\nStakeholder\nLocal\n\n\nSOTA\nSmart contract\nYes\nNo\nContract parties\n\n\n\nTISE\nAdaptive PUDAL\nInitial policy\nYes\nCooperative governance",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#scenario-definition",
     "href": "worksheets.html#scenario-definition",
-    "title": "7  Modeling Worksheets",
-    "section": "7.7 Scenario definition",
-    "text": "7.7 Scenario definition\n\n\n\n\n\n\n\n\n\n\n\nScenario\nOnset\nSeverity\nDuration\nAffected resources/exchanges\nRecovery condition\n\n\n\n\nNormal\n\n0",
+    "title": "8  Modeling Worksheets",
+    "section": "8.7 Scenario definition",
+    "text": "8.7 Scenario definition\n\n\n\n\n\n\n\n\n\n\n\nScenario\nOnset\nSeverity\nDuration\nAffected resources/exchanges\nRecovery condition\n\n\n\n\nNormal\n\n0",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#experiment-matrix",
     "href": "worksheets.html#experiment-matrix",
-    "title": "7  Modeling Worksheets",
-    "section": "7.8 Experiment matrix",
-    "text": "7.8 Experiment matrix\n\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nReasoner\nScenario\nObjective\nSeed\nRepetitions\nOutput file",
+    "title": "8  Modeling Worksheets",
+    "section": "8.8 Experiment matrix",
+    "text": "8.8 Experiment matrix\n\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nReasoner\nScenario\nObjective\nSeed\nRepetitions\nOutput file",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   },
   {
     "objectID": "worksheets.html#traceability",
     "href": "worksheets.html#traceability",
-    "title": "7  Modeling Worksheets",
-    "section": "7.9 Traceability",
-    "text": "7.9 Traceability\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublic need\nMission\nMIG\nPSKVE exchange\nVOMR update\nMetric\nPython object\nTest",
+    "title": "8  Modeling Worksheets",
+    "section": "8.9 Traceability",
+    "text": "8.9 Traceability\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublic need\nMission\nMIG\nPSKVE exchange\nVOMR update\nMetric\nPython object\nTest",
     "crumbs": [
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Modeling Worksheets</span>"
     ]
   }
 ]

@@ -1,0 +1,448 @@
+---
+title: "Writing an IEEE Paper from an Application Case and Simulation"
+---
+
+# Purpose and outcome
+
+This tutorial turns an engineering application case and its simulation into a focused, reproducible IEEE-style paper. The running example is the sustainable campus food ecosystem developed in this course, but the workflow also applies to transportation, health care, energy, education, and other engineered systems.
+
+The key move is to treat the case and the simulation as **evidence for a research claim**, not as the paper's claim by themselves. A publishable paper does more than describe an application or report program output. It states a gap, proposes a technical response, tests that response fairly, and limits its conclusions to what the evidence supports.
+
+At the end of the tutorial, you should have:
+
+1. a one-sentence research claim;
+2. a contribution list tied to evidence;
+3. an IEEE-style section outline;
+4. a reproducible experiment and result package; and
+5. a submission-ready manuscript source.
+
+# Start with the paper's argument
+
+## Convert the application into a research problem
+
+Describe the application in five lines before writing prose:
+
+| Element | Question | Campus food example |
+|---|---|---|
+| Public need | What outcome matters, and to whom? | Affordable, safe, nutritious food for the campus community |
+| System boundary | Which place, actors, flows, and time horizon are modeled? | One campus, its consumers, vendors, suppliers, operator, and governance actors |
+| Technical difficulty | Why do existing methods struggle? | Stakeholders have different missions and disruptions change feasible exchanges |
+| Proposed response | What mechanism is introduced? | Adaptive PUDAL coordination of stakeholder MIGs and PSKVE exchanges |
+| Testable consequence | What should improve if it works? | Mission achievement and value retention improve without violating hard constraints |
+
+A research problem is stronger than a topic. "AI for campus food" is a topic. The following is testable:
+
+> Fixed coordination rules cannot respond to changing stakeholder missions and resource disruptions; therefore, this study tests whether adaptive multi-stakeholder coordination improves mission achievement and resilience under controlled, matched simulation conditions.
+
+## Write the claim before the manuscript
+
+Use this pattern:
+
+> For **[bounded application and conditions]**, the proposed **[method]** improves **[primary outcomes]** relative to **[credible comparator]**, as measured by **[declared metrics]**, while satisfying **[constraints]**.
+
+Example:
+
+> For a simulated campus food ecosystem under normal and supply-disruption scenarios, adaptive TISE coordination improves aggregate mission achievement and performance retention relative to baseline and fixed-contract coordination, while preserving stakeholder safety and resource constraints.
+
+This statement is a hypothesis until results support it. If the simulation does not support it, revise the claim rather than hiding inconvenient results.
+
+## Build a claim--evidence map
+
+Every contribution must point to an artifact or result.
+
+| Proposed contribution | Required evidence | Likely paper location |
+|---|---|---|
+| Formal ecosystem representation | Defined stakeholders, missions, variables, exchanges, and constraints | Method/model |
+| Adaptive coordination method | Algorithm, inputs, outputs, objective, and complexity or execution details | Method |
+| Reusable simulation testbed | Architecture, parameters, scenarios, seeds, and code availability | Experimental setup |
+| Performance or resilience improvement | Matched comparisons, uncertainty, effect sizes, and sensitivity tests | Results |
+
+Remove a claimed contribution if the paper provides no direct evidence for it.
+
+# Choose a paper type and scope
+
+An application-and-simulation study usually fits one of these forms:
+
+- **Methods paper:** the algorithm or formalism is the main novelty; the case demonstrates it.
+- **Application paper:** adapting and validating known methods in a consequential domain is the novelty.
+- **Simulation/testbed paper:** the model, benchmark, or experimental environment is the contribution.
+- **Comparative study:** the main contribution is a controlled comparison that yields a generalizable insight.
+
+Choose one primary identity. Trying to present all four equally usually creates an unfocused manuscript. For this project, a methods paper with a simulation-based application evaluation is the natural default.
+
+Before drafting, check the target IEEE journal or conference's current scope, page limit, anonymization policy, required sections, and supplementary-material rules. The venue's author instructions override this tutorial.
+
+# Design the manuscript backward from the claim
+
+Use the following compact structure. The percentages are planning guides, not IEEE rules.
+
+| Section | Purpose | Approximate share |
+|---|---|---:|
+| Abstract and index terms | Compress problem, method, experiment, result, and significance | 3--5% |
+| I. Introduction | Establish importance, gap, response, and contributions | 12--15% |
+| II. Related Work | Position the exact gap against the closest methods | 10--15% |
+| III. Case and Problem Formulation | Bound the application and formalize the decision problem | 12--18% |
+| IV. Proposed Method | Make the method understandable and reproducible | 20--25% |
+| V. Experimental Method | Define fair tests before showing outcomes | 15--20% |
+| VI. Results | Report observations with uncertainty | 12--18% |
+| VII. Discussion | Interpret mechanisms, limits, and transferability | 8--12% |
+| VIII. Conclusion | Answer the research question without new evidence | 3--5% |
+
+IEEE conference page limits may require combining the case with the method or combining discussion with results.
+
+# Draft each section
+
+## Title
+
+Make the title specific enough to reveal the method, problem, and evidence type. Avoid claims such as "optimal," "intelligent," or "superior" unless they are precisely established.
+
+Useful pattern:
+
+> **[Method]: [Technical purpose] for [application], evaluated through [evidence]**
+
+Example:
+
+> **Adaptive Multi-Stakeholder Coordination for Campus Food Ecosystems: A Digital-Twin Simulation Study**
+
+## Abstract
+
+Write the abstract after the results are final. Use five moves in one paragraph:
+
+1. **Context:** one sentence explaining why the problem matters.
+2. **Gap:** one sentence naming the unresolved technical limitation.
+3. **Method:** one or two sentences describing what was built.
+4. **Evaluation:** one sentence stating comparators, scenarios, metrics, and scale.
+5. **Result and meaning:** one or two sentences with the principal numerical result and a bounded conclusion.
+
+Template:
+
+> **[Context].** However, **[specific limitation in existing approaches]**. This paper proposes **[method and essential mechanism]**. We evaluate it in **[application/model]** against **[comparators]** across **[scenarios, seeds, or conditions]**, using **[primary metrics]**. The proposed method achieves **[main result with value and uncertainty]** and **[secondary result]**. These findings indicate **[bounded implication]**, although **[important limitation, if needed]**.
+
+Do not place citations, undefined abbreviations, background surveys, or unreported promises in the abstract.
+
+## I. Introduction
+
+A reliable six-paragraph introduction is:
+
+1. Establish the real engineering need and its consequences.
+2. Explain the technical difficulty, not merely the domain importance.
+3. Summarize the closest solution families.
+4. State precisely what remains unresolved.
+5. Present the proposed response and evaluation logic.
+6. List two to four verifiable contributions and preview the paper.
+
+Contribution template:
+
+> The principal contributions are:
+>
+> 1. a formal **[model]** that represents **[previously missing capability]**;
+> 2. an adaptive **[algorithm/mechanism]** that **[technical action]** subject to **[constraints]**; and
+> 3. a reproducible evaluation against **[comparators]** over **[conditions]**, showing **[supported result, added only after analysis]**.
+
+Do not use "The paper is novel" as evidence of novelty. The comparison with prior work must make that case.
+
+## II. Related Work
+
+Organize related work by technical approach, not one paragraph per paper. For this study, useful groups might be mission-oriented engineering, multi-agent or multi-stakeholder coordination, digital twins, smart contracts, and resilience evaluation.
+
+For each group, answer:
+
+- What problem does the approach solve?
+- What information and assumptions does it require?
+- What does it optimize or guarantee?
+- What remains unavailable for this paper's problem?
+
+End with a synthesis table whose columns encode the capabilities needed by the proposed claim. Cite original papers and authoritative standards where possible. A missing citation is not automatically a research gap; demonstrate that the missing capability matters technically.
+
+## III. Application Case and Problem Formulation
+
+Separate the real-world narrative from the mathematical abstraction.
+
+First, define:
+
+- population, location, time step, and study horizon;
+- stakeholder roles and decision authority;
+- resources, outputs, exchanges, and external inputs;
+- normal operation and disruption boundaries; and
+- exclusions and assumptions.
+
+Then formalize the model. At minimum identify:
+
+
+\[
+\mathcal{S}=\{s_1,\ldots,s_n\},\qquad
+\mathbf{x}_t=\text{system state},\qquad
+\mathbf{u}_t=\text{decisions},\qquad
+\boldsymbol{\xi}_t=\text{disturbances}.
+\]
+
+State the transition, objective, and constraints:
+
+\[
+\mathbf{x}_{t+1}=f(\mathbf{x}_t,\mathbf{u}_t,\boldsymbol{\xi}_t),
+\]
+
+\[
+\max_{\mathbf{u}_{0:T}} J=\sum_{t=0}^{T}\sum_{i\in\mathcal{S}}w_i U_i(\mathbf{x}_t,\mathbf{u}_t),
+\]
+
+subject to safety, capacity, conservation, fairness, and governance constraints. Define every symbol, unit, range, and data source. If weights express a policy preference rather than an observed fact, say so.
+
+## IV. Proposed Method
+
+Explain the method in the order a reader would implement it:
+
+1. inputs and their availability at decision time;
+2. state estimation or preprocessing;
+3. recommendation or optimization step;
+4. constraint checking and human authorization;
+5. state update and recorded outputs; and
+6. stopping or fallback behavior.
+
+Include one architecture figure and one algorithm listing. The text should explain **why** each operation is necessary; the pseudocode should explain **how** the operations are sequenced.
+
+Distinguish clearly among:
+
+- baseline operation;
+- the strongest credible fixed or state-of-the-art comparator; and
+- the proposed adaptive method.
+
+Do not give the proposed method extra information, a better reasoner, or looser constraints unless that difference is itself the treatment being studied.
+
+## V. Experimental Method
+
+Write this section as a protocol that another researcher could repeat.
+
+### Research questions
+
+Example questions are:
+
+- **RQ1:** Does adaptive coordination improve mission achievement in normal operation?
+- **RQ2:** Does it retain more performance and recover faster during disruptions?
+- **RQ3:** How sensitive are conclusions to objective weights, reasoning modes, and random seeds?
+- **RQ4:** Which stakeholders benefit or lose when aggregate performance changes?
+
+### Comparators and ablations
+
+Use matched conditions for baseline, SOTA, and TISE. Add ablations that remove one proposed component at a time where feasible. Compare against the strongest relevant comparator, not an intentionally weak baseline.
+
+### Scenarios and parameters
+
+Report normal operation plus named disruptions, including onset, duration, severity, and recovery. Provide a parameter table with symbol, meaning, unit, value or range, and justification. Separate measured values, literature-derived values, calibrated values, and assumptions.
+
+### Reproducibility
+
+For this repository, a minimum matched run is:
+
+```powershell
+python -m simulation --architecture baseline --reasoning probabilistic --steps 24 --seed 42 --output results/baseline.csv
+python -m simulation --architecture sota --reasoning probabilistic --steps 24 --seed 42 --output results/sota.csv
+python -m simulation --architecture tise --reasoning probabilistic --steps 24 --seed 42 --output results/tise.csv
+```
+
+Repeat stochastic conditions over multiple declared seeds. Record the software version, commit identifier, operating environment, dependencies, run command, configuration, raw outputs, and analysis script. If an external AI model is involved, also record provider, model identifier, prompt version, sampling settings, failures, fallbacks, and access date.
+
+### Metrics and analysis
+
+Declare one primary metric before inspecting results. Secondary metrics can include stakeholder utility, total value, mission achievement, constraint violations, equity, retention, recovery time, cumulative loss, and computation time.
+
+Report:
+
+- sample size and unit of analysis;
+- mean or median as appropriate;
+- dispersion or confidence intervals;
+- absolute and relative effect sizes;
+- statistical test and assumptions, if inferential tests are used; and
+- sensitivity and worst-case behavior.
+
+Seeds are repeated simulation realizations, not automatically independent real-world observations. Avoid using a small simulation p-value as proof that the real system will behave identically.
+
+## VI. Results
+
+Organize results by research question rather than by file or program module. Begin each subsection with the answer, then show the evidence.
+
+Recommended order:
+
+1. verification and sanity checks;
+2. primary comparison under normal conditions;
+3. disruption and resilience results;
+4. stakeholder-level distributional effects;
+5. ablation and sensitivity analysis; and
+6. failure cases and computational cost.
+
+Good result sentence:
+
+> Across 30 matched seeds, TISE increased median mission achievement from 0.71 to 0.79 (absolute difference 0.08; 95% bootstrap CI [0.05, 0.11]) relative to the strongest fixed-contract comparator.
+
+Replace the values with actual outputs. Do not use placeholders in a submitted manuscript.
+
+Each table or figure should answer one question and remain understandable from its caption. Avoid repeating every table value in prose; state the pattern, magnitude, uncertainty, and exception.
+
+## VII. Discussion and validity
+
+The discussion explains what the results mean and why they occurred. A useful order is:
+
+1. answer each research question;
+2. explain the observed mechanism;
+3. compare the result with prior work;
+4. discuss practical significance and stakeholder tradeoffs;
+5. report failure cases; and
+6. bound generalization.
+
+Address validity explicitly:
+
+- **Construct validity:** Do the metrics represent mission, value, resilience, and equity?
+- **Internal validity:** Are comparison differences caused by the treatment rather than unequal information or parameters?
+- **External validity:** Which conclusions may transfer beyond this campus and which depend on local assumptions?
+- **Conclusion validity:** Are there enough runs, appropriate summaries, and robust effects?
+
+Simulation validates consequences of the encoded assumptions. Real-world claims require calibration, observational evidence, expert review, field trials, or other external validation.
+
+## VIII. Conclusion
+
+Use three short moves:
+
+1. restate the problem and technical response;
+2. report the main quantitative finding; and
+3. state the bounded implication and next evidence needed.
+
+Do not introduce a new method, citation, limitation, or result in the conclusion.
+
+# Turn simulation outputs into publication evidence
+
+Use a traceable evidence pipeline:
+
+```text
+case assumptions -> configuration -> simulation runs -> raw data
+                 -> analysis script -> tables/figures -> manuscript claim
+```
+
+Keep the following artifacts together:
+
+| Artifact | Minimum contents |
+|---|---|
+| Configuration | Parameters, scenarios, objectives, constraints, seeds |
+| Raw results | One tidy row per run, time step, stakeholder, or declared unit |
+| Analysis | Script or notebook that produces every reported statistic |
+| Figures/tables | Stable identifiers matching manuscript references |
+| Run manifest | Command, timestamp, code version, environment, failures |
+
+Before trusting the experiment, test invariants such as nonnegative stocks, capacity bounds, conservation equations, permitted state transitions, and deterministic replay under a fixed seed.
+
+# Figures and tables for a compact IEEE paper
+
+A strong minimum set is:
+
+1. **System boundary and stakeholder exchange figure** -- what is modeled.
+2. **Method or control-loop figure** -- what is proposed.
+3. **Experimental matrix table** -- what was compared.
+4. **Main performance figure or table** -- whether the primary claim is supported.
+5. **Resilience or sensitivity figure** -- whether the result survives difficult conditions.
+
+Use vector output for diagrams and plots when possible. Ensure axes include quantities and units, legends remain readable in a two-column layout, colors remain distinguishable when printed in grayscale, and captions state the takeaway rather than merely naming the object.
+
+# IEEE-style Quarto starter
+
+This repository includes a local IEEE Quarto format under `ieee/`. A minimal manuscript header is:
+
+```yaml
+---
+title: "Adaptive Multi-Stakeholder Coordination for Campus Food Ecosystems"
+format:
+  ieee-pdf:
+    keep-tex: true
+  ieee-html: default
+author:
+  - name: "Author Name"
+    affiliations:
+      - name: "Institution Name"
+    email: "author@example.org"
+abstract: |
+  Replace this text after the results are final.
+keywords: [digital twin, multi-stakeholder systems, simulation, resilience]
+bibliography: bibliography.bib
+---
+```
+
+Place the source inside `ieee/` so the local extension is available, then render from the project root:
+
+```powershell
+quarto render ieee/your-paper.qmd
+```
+
+Use citation keys from the BibTeX file, for example `[@citationKey]`, and cross-reference labeled items such as `@fig-architecture`, `@tbl-experiments`, and `@eq-objective`. Inspect the generated PDF for overflow, illegible labels, orphan headings, and references that extend beyond a column.
+
+# A practical writing sequence
+
+Do not begin by polishing the introduction. Use this order:
+
+1. Freeze the case boundary, research questions, comparators, and primary metric.
+2. Complete verification tests and the experiment matrix.
+3. Generate final tables and figures from scripts.
+4. Write the Results section without interpretation beyond the evidence.
+5. Write Experimental Method so every result is reproducible.
+6. Write the Method and Problem Formulation.
+7. Write Discussion and threats to validity.
+8. Write Related Work and Introduction around the demonstrated gap.
+9. Write the Conclusion, title, and abstract last.
+10. Perform technical, argument, language, and format reviews separately.
+
+# Final review checklist
+
+## Research argument
+
+- Is there one explicit research question and one primary claim?
+- Does each contribution have visible evidence?
+- Is the closest prior work compared fairly?
+- Are claims bounded to the modeled case and tested conditions?
+
+## Experimental integrity
+
+- Are comparators run with matched information, parameters, scenarios, and seeds?
+- Are parameters sourced or labeled as assumptions?
+- Are verification, uncertainty, ablation, sensitivity, and failure cases reported?
+- Can every reported number be regenerated from stored data and code?
+- Are stakeholder-level effects reported alongside aggregate outcomes?
+
+## Manuscript quality
+
+- Are all acronyms defined at first use?
+- Does every symbol have a meaning and unit?
+- Does every figure and table have a takeaway caption and a textual reference?
+- Are citations complete and generated from the bibliography rather than typed manually?
+- Does the abstract contain the actual principal numerical result?
+
+## Submission
+
+- Does the manuscript match the selected venue's scope and current author instructions?
+- Are page limit, anonymity, ethics, conflict, funding, and data/code declarations satisfied?
+- Are fonts embedded and figures legible in the final two-column PDF?
+- Have all comments, placeholders, tracked changes, and identifying metadata been handled?
+- Has every author reviewed and approved the final manuscript?
+
+# One-page planning worksheet
+
+Complete this before drafting:
+
+```text
+Application and boundary:
+Engineering problem:
+Closest existing approach:
+Specific unresolved gap:
+Proposed method:
+Primary research question:
+Primary metric:
+Strongest comparator:
+Normal scenario:
+Disruption scenarios:
+Main hard constraints:
+Number of runs/seeds:
+Planned ablations:
+Main validity risk:
+Evidence needed beyond simulation:
+Expected contribution 1 -> evidence:
+Expected contribution 2 -> evidence:
+Expected contribution 3 -> evidence:
+```
+
+If a line cannot be completed precisely, that is useful diagnostic information: the study design needs attention before the prose does.
