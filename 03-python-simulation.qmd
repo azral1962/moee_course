@@ -2,7 +2,7 @@
 
 The repository already contains a standard-library implementation in `./simulation/`. This chapter reconstructs the development sequence so learners understand and can replace each layer.
 
-[simulation](./docs/simulation/)
+[simulation](./simulation.rar)
 
 
 Run all commands from the repository root.
