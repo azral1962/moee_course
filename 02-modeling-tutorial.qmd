@@ -1,0 +1,148 @@
+# Tutorial: Build an MOEE Model for a Specific Case
+
+This tutorial uses **campus food service** as the worked case. Replace the worked entries with your own case while preserving the sequence and traceability.
+
+## Step 1 — State the public need and boundary
+
+Write one sentence describing the need, population, place, and time horizon.
+
+> The campus community needs safe, nutritious, affordable meals during operating days while vendors remain viable and waste and disruption losses remain acceptable.
+
+Boundary decisions:
+
+- Included: students, vendors, suppliers, campus regulators, service operators, ordering and delivery.
+- Excluded in the first model: regional agricultural policy and long-term campus construction.
+- Time step: one service period.
+- Horizon: 24 service periods.
+
+**Acceptance check:** every modeled exchange and metric must be relevant to this boundary.
+
+## Step 2 — Register stakeholder roles
+
+| ID | Functional role | Worked stakeholder | Why it is needed |
+|---|---|---|---|
+| users | User | Students | Consume meals and express demand and affordability needs |
+| sources | Source | Food vendors and suppliers | Transform ingredients and labor into meals |
+| regulators | Regulator/governance | Campus food authority | Enforces safety, access, and sustainability policy |
+| operators | Operator | Campus food-service operator | Coordinates schedules, ordering, settlement, and delivery |
+
+Do not add a stakeholder merely because it exists in reality. Add it when it owns a distinct mission, constraint, decision, exchange, or VOMR account.
+
+## Step 3 — Define missions and constraints
+
+Use this pattern:
+
+> **Verb + mission output + beneficiary + timing + constraints.**
+
+Worked missions:
+
+- Users: obtain affordable, nutritious meals during required service periods.
+- Sources: produce safe meals while maintaining positive operating value.
+- Regulators: maintain safety and sustainability requirements.
+- Operators: provide reliable matching, scheduling, and settlement.
+
+For each mission, record hard constraints separately from preferences. Safety limits are not weights that may be traded away for profit.
+
+## Step 4 — Open VOMR accounts
+
+| Stakeholder | Value \(V\) | Output \(O\) | Mission \(M\) | Resources \(R\) |
+|---|---|---|---|---|
+| Users | affordability/utility account | meals accessed | access achievement | budget, time, information |
+| Sources | operating value | meals produced | production achievement | ingredients, labor, assets |
+| Regulators | public-value account | inspections/policy services | compliance achievement | staff, authority, knowledge |
+| Operators | service value | orders routed/settled | reliability achievement | platform, staff, liquidity |
+
+Specify units and update rules. If an account cannot be updated from simulation events, it is still a concept—not yet a computational variable.
+
+## Step 5 — Map PSKVE exchanges
+
+Create one row per directed exchange.
+
+| Source → destination | Product | Service | Knowledge | Value | Environment |
+|---|---|---|---|---|---|
+| Suppliers → vendors | Ingredients | Replenishment | Availability data | Payment claim | Cold-chain conditions |
+| Vendors → users | Meals | Preparation | Nutrition/allergen data | Affordability and revenue | Packaging and waste |
+| Users → operators | — | Order request | Demand and feedback | Payment | Queue conditions |
+| Regulators → ecosystem | — | Inspection | Rules and alerts | Safety assurance | Facility constraints |
+
+Check that every critical resource and output has a corresponding exchange path.
+
+## Step 6 — Define stakeholder MIGs
+
+For each stakeholder, complete:
+
+| Field | Example |
+|---|---|
+| MIG meaning | Fraction of vendor meal-production capacity scheduled |
+| Time step | One meal-service period |
+| Zero | No production scheduled |
+| One | Full feasible production capacity |
+| Inputs | demand, stock, staffing, disruption, policy |
+| Hard limits | ingredients, labor, safety, liquidity |
+| Reasoner | historical, probabilistic, agentic, or hybrid |
+
+Use different symbols or stakeholder IDs even when MIGs interact. A user demand MIG and vendor production MIG may correlate, but they are not interchangeable.
+
+## Step 7 — Select setup modes
+
+Model all three for a fair comparison:
+
+- Baseline: each stakeholder commits its proposal independently.
+- SOTA: stakeholders prenegotiate a smart contract, objective, and fixed coordination rule.
+- TISE: stakeholders cooperate through adaptive PUDAL recommendations informed by Triune Intelligence.
+
+Write the prenegotiated contract before running SOTA. Changing it in response to a simulated shock would quietly turn it into an adaptive model.
+
+## Step 8 — Define objective functions
+
+Start with separate metrics:
+
+- meal availability;
+- affordability;
+- vendor net value;
+- waste;
+- safety compliance;
+- average mission achievement; and
+- disruption retention and recovery.
+
+Only then define an Ecosystem Value Index:
+
+\[
+EVI(t)=\sum_k w_k z_k(t).
+\]
+
+Record the normalization and weights. Report component metrics beside EVI so poor performance cannot hide behind aggregation.
+
+## Step 9 — Define scenarios
+
+At minimum include:
+
+1. normal demand and supply;
+2. demand surge;
+3. source shortage;
+4. operator/platform outage;
+5. safety or regulatory restriction; and
+6. combined disruption.
+
+Specify onset, severity, duration, and recovery criteria before running experiments.
+
+## Step 10 — Write validation questions
+
+- VQ1: Does the baseline execute valid stakeholder MIGs and balanced VOMR updates?
+- VQ2: Does each fixed SOTA contract improve its declared objective over baseline?
+- VQ3: Does TISE match or exceed the strongest SOTA value result under normal operation?
+- VQ4: Does TISE retain more performance or recover faster under disruption?
+
+## Step 11 — Create the traceability matrix
+
+| Public need | Stakeholder mission | MIG | Exchange | VOMR update | Metric | Code object |
+|---|---|---|---|---|---|---|
+| Affordable meals | User access | users intensity | vendor → user meal | user O/M/V | affordability, access | `Stakeholder`, `Mission` |
+| Reliable supply | Vendor viability | sources intensity | supplier → vendor inputs | source R/O/V | net value, shortages | `PSKVEExchangeEngine` |
+| Safe operation | Regulatory assurance | regulators intensity | regulator → ecosystem service | regulator O/M | compliance | `AdaptivePUDALCoordinator` |
+
+If a requirement has no code object or metric, the implementation is incomplete. If code has no requirement, it may be accidental complexity.
+
+## Step 12 — Approve the model specification
+
+Before coding, review the model with representatives of all stakeholder classes. Record unresolved disagreements about missions, weights, data, authority, and acceptable automation. In public-need ecosystems, disagreement is model input—not noise to delete.

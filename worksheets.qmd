@@ -1,0 +1,69 @@
+# Modeling Worksheets
+
+Copy these tables into a case report or spreadsheet.
+
+## Case boundary
+
+| Field | Entry |
+|---|---|
+| Public need | |
+| Beneficiary population | |
+| Place/system boundary | |
+| Time step and horizon | |
+| Included processes | |
+| Explicit exclusions | |
+| Decision owner | |
+
+## Stakeholder registry
+
+| ID | Name | Role | Mission | Hard constraints | Decisions | Data available |
+|---|---|---|---|---|---|---|
+| | | User/source/regulator/operator | | | | |
+
+## VOMR accounts
+
+| Stakeholder | Account | Symbol | Unit | Opening value | Update event | Update equation |
+|---|---|---|---|---:|---|---|
+| | Value | | | | | |
+| | Output | | | | | |
+| | Mission | | | | | |
+| | Resources | | | | | |
+
+## PSKVE exchanges
+
+| Source | Destination | Product | Service | Knowledge | Values | Environment | Trigger |
+|---|---|---|---|---|---|---|---|
+| | | | | | | | |
+
+## MIG specification
+
+| Stakeholder | MIG meaning | Time unit | Zero | One | Inputs | Hard limits | Reasoning mode |
+|---|---|---|---|---|---|---|---|
+| | | | | | | | |
+
+## Setup specification
+
+| Architecture | Setup operator | Negotiated before run | May adapt during run | Authority and consent | Objective |
+|---|---|---|---|---|---|
+| Baseline | Independent | N/A | No | Stakeholder | Local |
+| SOTA | Smart contract | Yes | No | Contract parties | |
+| TISE | Adaptive PUDAL | Initial policy | Yes | Cooperative governance | |
+
+## Scenario definition
+
+| Scenario | Onset | Severity | Duration | Affected resources/exchanges | Recovery condition |
+|---|---:|---:|---:|---|---|
+| Normal | | 0 | | | |
+| | | | | | |
+
+## Experiment matrix
+
+| Architecture | Reasoner | Scenario | Objective | Seed | Repetitions | Output file |
+|---|---|---|---|---:|---:|---|
+| | | | | | | |
+
+## Traceability
+
+| Public need | Mission | MIG | PSKVE exchange | VOMR update | Metric | Python object | Test |
+|---|---|---|---|---|---|---|---|
+| | | | | | | | |

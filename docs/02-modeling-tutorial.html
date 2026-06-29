@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.9.31">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>2&nbsp; Tutorial: Build an MOEE Model for a Specific Case – Learning Mission-Oriented Ecosystem Engineering</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./03-python-simulation.html" rel="next">
+<link href="./01-foundations.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-7c69b197886ae2a34062761d21e44731.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-ec8eff129d6f50c8392963982e963180.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./02-modeling-tutorial.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tutorial: Build an MOEE Model for a Specific Case</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Learning Mission-Oriented Ecosystem Engineering</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Course Overview</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01-foundations.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MOEE Foundations</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02-modeling-tutorial.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tutorial: Build an MOEE Model for a Specific Case</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03-python-simulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Step-by-Step Python Simulation Development</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04-experiments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Experiments, Evidence, and Interpretation</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05-capstone.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Capstone Project</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./instructor-guide.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Instructor Guide</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./worksheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Modeling Worksheets</span></span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#step-1-state-the-public-need-and-boundary" id="toc-step-1-state-the-public-need-and-boundary" class="nav-link active" data-scroll-target="#step-1-state-the-public-need-and-boundary"><span class="header-section-number">2.1</span> Step 1 — State the public need and boundary</a></li>
+  <li><a href="#step-2-register-stakeholder-roles" id="toc-step-2-register-stakeholder-roles" class="nav-link" data-scroll-target="#step-2-register-stakeholder-roles"><span class="header-section-number">2.2</span> Step 2 — Register stakeholder roles</a></li>
+  <li><a href="#step-3-define-missions-and-constraints" id="toc-step-3-define-missions-and-constraints" class="nav-link" data-scroll-target="#step-3-define-missions-and-constraints"><span class="header-section-number">2.3</span> Step 3 — Define missions and constraints</a></li>
+  <li><a href="#step-4-open-vomr-accounts" id="toc-step-4-open-vomr-accounts" class="nav-link" data-scroll-target="#step-4-open-vomr-accounts"><span class="header-section-number">2.4</span> Step 4 — Open VOMR accounts</a></li>
+  <li><a href="#step-5-map-pskve-exchanges" id="toc-step-5-map-pskve-exchanges" class="nav-link" data-scroll-target="#step-5-map-pskve-exchanges"><span class="header-section-number">2.5</span> Step 5 — Map PSKVE exchanges</a></li>
+  <li><a href="#step-6-define-stakeholder-migs" id="toc-step-6-define-stakeholder-migs" class="nav-link" data-scroll-target="#step-6-define-stakeholder-migs"><span class="header-section-number">2.6</span> Step 6 — Define stakeholder MIGs</a></li>
+  <li><a href="#step-7-select-setup-modes" id="toc-step-7-select-setup-modes" class="nav-link" data-scroll-target="#step-7-select-setup-modes"><span class="header-section-number">2.7</span> Step 7 — Select setup modes</a></li>
+  <li><a href="#step-8-define-objective-functions" id="toc-step-8-define-objective-functions" class="nav-link" data-scroll-target="#step-8-define-objective-functions"><span class="header-section-number">2.8</span> Step 8 — Define objective functions</a></li>
+  <li><a href="#step-9-define-scenarios" id="toc-step-9-define-scenarios" class="nav-link" data-scroll-target="#step-9-define-scenarios"><span class="header-section-number">2.9</span> Step 9 — Define scenarios</a></li>
+  <li><a href="#step-10-write-validation-questions" id="toc-step-10-write-validation-questions" class="nav-link" data-scroll-target="#step-10-write-validation-questions"><span class="header-section-number">2.10</span> Step 10 — Write validation questions</a></li>
+  <li><a href="#step-11-create-the-traceability-matrix" id="toc-step-11-create-the-traceability-matrix" class="nav-link" data-scroll-target="#step-11-create-the-traceability-matrix"><span class="header-section-number">2.11</span> Step 11 — Create the traceability matrix</a></li>
+  <li><a href="#step-12-approve-the-model-specification" id="toc-step-12-approve-the-model-specification" class="nav-link" data-scroll-target="#step-12-approve-the-model-specification"><span class="header-section-number">2.12</span> Step 12 — Approve the model specification</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Tutorial: Build an MOEE Model for a Specific Case</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This tutorial uses <strong>campus food service</strong> as the worked case. Replace the worked entries with your own case while preserving the sequence and traceability.</p>
+<section id="step-1-state-the-public-need-and-boundary" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="step-1-state-the-public-need-and-boundary"><span class="header-section-number">2.1</span> Step 1 — State the public need and boundary</h2>
+<p>Write one sentence describing the need, population, place, and time horizon.</p>
+<blockquote class="blockquote">
+<p>The campus community needs safe, nutritious, affordable meals during operating days while vendors remain viable and waste and disruption losses remain acceptable.</p>
+</blockquote>
+<p>Boundary decisions:</p>
+<ul>
+<li>Included: students, vendors, suppliers, campus regulators, service operators, ordering and delivery.</li>
+<li>Excluded in the first model: regional agricultural policy and long-term campus construction.</li>
+<li>Time step: one service period.</li>
+<li>Horizon: 24 service periods.</li>
+</ul>
+<p><strong>Acceptance check:</strong> every modeled exchange and metric must be relevant to this boundary.</p>
+</section>
+<section id="step-2-register-stakeholder-roles" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="step-2-register-stakeholder-roles"><span class="header-section-number">2.2</span> Step 2 — Register stakeholder roles</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID</th>
+<th>Functional role</th>
+<th>Worked stakeholder</th>
+<th>Why it is needed</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>users</td>
+<td>User</td>
+<td>Students</td>
+<td>Consume meals and express demand and affordability needs</td>
+</tr>
+<tr class="even">
+<td>sources</td>
+<td>Source</td>
+<td>Food vendors and suppliers</td>
+<td>Transform ingredients and labor into meals</td>
+</tr>
+<tr class="odd">
+<td>regulators</td>
+<td>Regulator/governance</td>
+<td>Campus food authority</td>
+<td>Enforces safety, access, and sustainability policy</td>
+</tr>
+<tr class="even">
+<td>operators</td>
+<td>Operator</td>
+<td>Campus food-service operator</td>
+<td>Coordinates schedules, ordering, settlement, and delivery</td>
+</tr>
+</tbody>
+</table>
+<p>Do not add a stakeholder merely because it exists in reality. Add it when it owns a distinct mission, constraint, decision, exchange, or VOMR account.</p>
+</section>
+<section id="step-3-define-missions-and-constraints" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="step-3-define-missions-and-constraints"><span class="header-section-number">2.3</span> Step 3 — Define missions and constraints</h2>
+<p>Use this pattern:</p>
+<blockquote class="blockquote">
+<p><strong>Verb + mission output + beneficiary + timing + constraints.</strong></p>
+</blockquote>
+<p>Worked missions:</p>
+<ul>
+<li>Users: obtain affordable, nutritious meals during required service periods.</li>
+<li>Sources: produce safe meals while maintaining positive operating value.</li>
+<li>Regulators: maintain safety and sustainability requirements.</li>
+<li>Operators: provide reliable matching, scheduling, and settlement.</li>
+</ul>
+<p>For each mission, record hard constraints separately from preferences. Safety limits are not weights that may be traded away for profit.</p>
+</section>
+<section id="step-4-open-vomr-accounts" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="step-4-open-vomr-accounts"><span class="header-section-number">2.4</span> Step 4 — Open VOMR accounts</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Stakeholder</th>
+<th>Value (V)</th>
+<th>Output (O)</th>
+<th>Mission (M)</th>
+<th>Resources (R)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Users</td>
+<td>affordability/utility account</td>
+<td>meals accessed</td>
+<td>access achievement</td>
+<td>budget, time, information</td>
+</tr>
+<tr class="even">
+<td>Sources</td>
+<td>operating value</td>
+<td>meals produced</td>
+<td>production achievement</td>
+<td>ingredients, labor, assets</td>
+</tr>
+<tr class="odd">
+<td>Regulators</td>
+<td>public-value account</td>
+<td>inspections/policy services</td>
+<td>compliance achievement</td>
+<td>staff, authority, knowledge</td>
+</tr>
+<tr class="even">
+<td>Operators</td>
+<td>service value</td>
+<td>orders routed/settled</td>
+<td>reliability achievement</td>
+<td>platform, staff, liquidity</td>
+</tr>
+</tbody>
+</table>
+<p>Specify units and update rules. If an account cannot be updated from simulation events, it is still a concept—not yet a computational variable.</p>
+</section>
+<section id="step-5-map-pskve-exchanges" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="step-5-map-pskve-exchanges"><span class="header-section-number">2.5</span> Step 5 — Map PSKVE exchanges</h2>
+<p>Create one row per directed exchange.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Source → destination</th>
+<th>Product</th>
+<th>Service</th>
+<th>Knowledge</th>
+<th>Value</th>
+<th>Environment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Suppliers → vendors</td>
+<td>Ingredients</td>
+<td>Replenishment</td>
+<td>Availability data</td>
+<td>Payment claim</td>
+<td>Cold-chain conditions</td>
+</tr>
+<tr class="even">
+<td>Vendors → users</td>
+<td>Meals</td>
+<td>Preparation</td>
+<td>Nutrition/allergen data</td>
+<td>Affordability and revenue</td>
+<td>Packaging and waste</td>
+</tr>
+<tr class="odd">
+<td>Users → operators</td>
+<td>—</td>
+<td>Order request</td>
+<td>Demand and feedback</td>
+<td>Payment</td>
+<td>Queue conditions</td>
+</tr>
+<tr class="even">
+<td>Regulators → ecosystem</td>
+<td>—</td>
+<td>Inspection</td>
+<td>Rules and alerts</td>
+<td>Safety assurance</td>
+<td>Facility constraints</td>
+</tr>
+</tbody>
+</table>
+<p>Check that every critical resource and output has a corresponding exchange path.</p>
+</section>
+<section id="step-6-define-stakeholder-migs" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="step-6-define-stakeholder-migs"><span class="header-section-number">2.6</span> Step 6 — Define stakeholder MIGs</h2>
+<p>For each stakeholder, complete:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Field</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>MIG meaning</td>
+<td>Fraction of vendor meal-production capacity scheduled</td>
+</tr>
+<tr class="even">
+<td>Time step</td>
+<td>One meal-service period</td>
+</tr>
+<tr class="odd">
+<td>Zero</td>
+<td>No production scheduled</td>
+</tr>
+<tr class="even">
+<td>One</td>
+<td>Full feasible production capacity</td>
+</tr>
+<tr class="odd">
+<td>Inputs</td>
+<td>demand, stock, staffing, disruption, policy</td>
+</tr>
+<tr class="even">
+<td>Hard limits</td>
+<td>ingredients, labor, safety, liquidity</td>
+</tr>
+<tr class="odd">
+<td>Reasoner</td>
+<td>historical, probabilistic, agentic, or hybrid</td>
+</tr>
+</tbody>
+</table>
+<p>Use different symbols or stakeholder IDs even when MIGs interact. A user demand MIG and vendor production MIG may correlate, but they are not interchangeable.</p>
+</section>
+<section id="step-7-select-setup-modes" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="step-7-select-setup-modes"><span class="header-section-number">2.7</span> Step 7 — Select setup modes</h2>
+<p>Model all three for a fair comparison:</p>
+<ul>
+<li>Baseline: each stakeholder commits its proposal independently.</li>
+<li>SOTA: stakeholders prenegotiate a smart contract, objective, and fixed coordination rule.</li>
+<li>TISE: stakeholders cooperate through adaptive PUDAL recommendations informed by Triune Intelligence.</li>
+</ul>
+<p>Write the prenegotiated contract before running SOTA. Changing it in response to a simulated shock would quietly turn it into an adaptive model.</p>
+</section>
+<section id="step-8-define-objective-functions" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="step-8-define-objective-functions"><span class="header-section-number">2.8</span> Step 8 — Define objective functions</h2>
+<p>Start with separate metrics:</p>
+<ul>
+<li>meal availability;</li>
+<li>affordability;</li>
+<li>vendor net value;</li>
+<li>waste;</li>
+<li>safety compliance;</li>
+<li>average mission achievement; and</li>
+<li>disruption retention and recovery.</li>
+</ul>
+<p>Only then define an Ecosystem Value Index:</p>
+<p>[ EVI(t)=_k w_k z_k(t). ]</p>
+<p>Record the normalization and weights. Report component metrics beside EVI so poor performance cannot hide behind aggregation.</p>
+</section>
+<section id="step-9-define-scenarios" class="level2" data-number="2.9">
+<h2 data-number="2.9" class="anchored" data-anchor-id="step-9-define-scenarios"><span class="header-section-number">2.9</span> Step 9 — Define scenarios</h2>
+<p>At minimum include:</p>
+<ol type="1">
+<li>normal demand and supply;</li>
+<li>demand surge;</li>
+<li>source shortage;</li>
+<li>operator/platform outage;</li>
+<li>safety or regulatory restriction; and</li>
+<li>combined disruption.</li>
+</ol>
+<p>Specify onset, severity, duration, and recovery criteria before running experiments.</p>
+</section>
+<section id="step-10-write-validation-questions" class="level2" data-number="2.10">
+<h2 data-number="2.10" class="anchored" data-anchor-id="step-10-write-validation-questions"><span class="header-section-number">2.10</span> Step 10 — Write validation questions</h2>
+<ul>
+<li>VQ1: Does the baseline execute valid stakeholder MIGs and balanced VOMR updates?</li>
+<li>VQ2: Does each fixed SOTA contract improve its declared objective over baseline?</li>
+<li>VQ3: Does TISE match or exceed the strongest SOTA value result under normal operation?</li>
+<li>VQ4: Does TISE retain more performance or recover faster under disruption?</li>
+</ul>
+</section>
+<section id="step-11-create-the-traceability-matrix" class="level2" data-number="2.11">
+<h2 data-number="2.11" class="anchored" data-anchor-id="step-11-create-the-traceability-matrix"><span class="header-section-number">2.11</span> Step 11 — Create the traceability matrix</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Public need</th>
+<th>Stakeholder mission</th>
+<th>MIG</th>
+<th>Exchange</th>
+<th>VOMR update</th>
+<th>Metric</th>
+<th>Code object</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Affordable meals</td>
+<td>User access</td>
+<td>users intensity</td>
+<td>vendor → user meal</td>
+<td>user O/M/V</td>
+<td>affordability, access</td>
+<td><code>Stakeholder</code>, <code>Mission</code></td>
+</tr>
+<tr class="even">
+<td>Reliable supply</td>
+<td>Vendor viability</td>
+<td>sources intensity</td>
+<td>supplier → vendor inputs</td>
+<td>source R/O/V</td>
+<td>net value, shortages</td>
+<td><code>PSKVEExchangeEngine</code></td>
+</tr>
+<tr class="odd">
+<td>Safe operation</td>
+<td>Regulatory assurance</td>
+<td>regulators intensity</td>
+<td>regulator → ecosystem service</td>
+<td>regulator O/M</td>
+<td>compliance</td>
+<td><code>AdaptivePUDALCoordinator</code></td>
+</tr>
+</tbody>
+</table>
+<p>If a requirement has no code object or metric, the implementation is incomplete. If code has no requirement, it may be accidental complexity.</p>
+</section>
+<section id="step-12-approve-the-model-specification" class="level2" data-number="2.12">
+<h2 data-number="2.12" class="anchored" data-anchor-id="step-12-approve-the-model-specification"><span class="header-section-number">2.12</span> Step 12 — Approve the model specification</h2>
+<p>Before coding, review the model with representatives of all stakeholder classes. Record unresolved disagreements about missions, weights, data, authority, and acceptable automation. In public-need ecosystems, disagreement is model input—not noise to delete.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./01-foundations.html" class="pagination-link" aria-label="MOEE Foundations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">MOEE Foundations</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./03-python-simulation.html" class="pagination-link" aria-label="Step-by-Step Python Simulation Development">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Step-by-Step Python Simulation Development</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,88 @@
+# Experiments, Evidence, and Interpretation
+
+## Factorial design
+
+At minimum, cross these factors:
+
+| Factor | Levels |
+|---|---|
+| Architecture/setup | Baseline, SOTA, TISE |
+| MIG reasoning | Historical, probabilistic, agentic, hybrid |
+| Scenario | Normal and named disruptions |
+| Objective | Value, mission, equity, sustainability, resilience |
+| Seed | Multiple seeds for stochastic modes |
+
+Do not compare historical baseline with agentic TISE and attribute the entire difference to PUDAL. Hold the reasoning mode constant when estimating the effect of setup.
+
+## Minimum experiment sequence
+
+1. Run baseline/historical to validate entities, flows, and VOMR conservation.
+2. Run baseline/probabilistic across seeds to validate uncertainty handling.
+3. Run SOTA with each prenegotiated objective.
+4. Run TISE under the same normal scenarios.
+5. Repeat all architectures under disruptions.
+6. Compare TISE with the strongest SOTA configuration, not merely the weakest.
+
+## Metrics
+
+### Value creation
+
+\[
+\Delta V_i=\operatorname{Revenue}_i-\operatorname{Cost}_i
+\]
+
+Report stakeholder-level and ecosystem aggregates. A positive total can coexist with an unacceptable loss for one stakeholder.
+
+### Mission achievement
+
+\[
+A_i(t)=\min\left(1,\frac{O_i(t)}{O_i^{target}(t)}\right).
+\]
+
+### Performance retention
+
+\[
+Retention=\frac{Performance_{disrupted}}{Performance_{normal}}.
+\]
+
+### Recovery time
+
+Count time steps from disruption onset until performance returns to a declared fraction of its normal reference.
+
+### Cumulative disruption loss
+
+\[
+L=\sum_t\max(0,Performance_{normal}(t)-Performance_{disrupted}(t)).
+\]
+
+## Reproducible batch exercise
+
+Run each command with the same step count and seed:
+
+```powershell
+python -m simulation --architecture baseline --reasoning probabilistic --steps 24 --seed 42 --output results/baseline.csv
+python -m simulation --architecture sota --reasoning probabilistic --steps 24 --seed 42 --output results/sota.csv
+python -m simulation --architecture tise --reasoning probabilistic --steps 24 --seed 42 --output results/tise.csv
+```
+
+Then repeat with several seeds and compute mean, dispersion, worst case, and confidence intervals. Agentic runs should also report provider failures and fallback rates.
+
+## Interpretation rules
+
+- Baseline success supports model existence, not optimality.
+- SOTA improvement supports the selected fixed contract, not all smart contracts.
+- TISE improvement in normal conditions supports adaptive value creation only for tested objectives and cases.
+- TISE resilience requires evidence across disruption types, severities, and durations.
+- A simulator demonstrates behavior of assumptions. It does not by itself validate those assumptions against the real world.
+
+## Threats to validity checklist
+
+- Are stakeholder missions elicited from actual stakeholders?
+- Are VOMR units and update equations dimensionally valid?
+- Are safety constraints modeled as hard constraints?
+- Is the baseline calibrated to observations?
+- Are models compared using identical random seeds and scenarios?
+- Does the agent receive information unavailable in the real system?
+- Are provider prompts or model changes documented?
+- Are results robust to weights and objective functions?
+- Are distributional effects reported alongside aggregate wealth?

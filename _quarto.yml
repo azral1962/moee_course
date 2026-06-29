@@ -1,0 +1,29 @@
+project:
+  type: book
+  output-dir: docs
+  
+
+book:
+  title: "Learning Mission-Oriented Ecosystem Engineering"
+  subtitle: "From Public-Need Case Definition to Agentic Python Simulation"
+  author: "Armein Z. R. Langi"
+  chapters:
+    - index.qmd
+    - 01-foundations.qmd
+    - 02-modeling-tutorial.qmd
+    - 03-python-simulation.qmd
+    - 04-experiments.qmd
+    - 05-capstone.qmd
+    - instructor-guide.qmd
+    - worksheets.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+    code-copy: true
+    code-overflow: wrap
+
+execute:
+  freeze: auto

@@ -1,0 +1,59 @@
+# Capstone Project
+
+## Task
+
+Design and simulate an MOEE model for one public-need ecosystem:
+
+- elderly services;
+- education;
+- health care;
+- public transportation;
+- home-based business; or
+- another instructor-approved case.
+
+## Required deliverables
+
+1. A two-page case boundary and public-need statement.
+2. Stakeholder registry with user, source, regulator/governance, and operator roles.
+3. Mission and hard-constraint specification.
+4. PSKVE exchange matrix.
+5. VOMR accounts with units and update equations.
+6. MIG definition and selected reasoning mode for every stakeholder.
+7. Baseline, SOTA smart contract, and adaptive TISE specifications.
+8. Normal and at least three disruptive scenarios.
+9. Reusable Python implementation derived from `simulation/`.
+10. Automated tests and reproducible run commands.
+11. Results comparing value creation and resilience.
+12. A limitations, safety, governance, and next-evidence section.
+
+## Recommended milestones
+
+- Week 1: case boundary and stakeholders
+- Week 2: missions, PSKVE, and VOMR
+- Week 3: MIGs and architecture definitions
+- Week 4: baseline implementation and validation
+- Week 5: SOTA and TISE implementation
+- Week 6: experiments, analysis, and defense
+
+## Rubric
+
+| Criterion | Points | Evidence |
+|---|---:|---|
+| Public need and boundary | 10 | Clear population, place, horizon, exclusions |
+| Stakeholders and missions | 15 | Complete roles, autonomy, constraints |
+| PSKVE and VOMR | 15 | Traceable exchanges and valid accounts |
+| MIG design | 10 | Meaning, units, reasoning, limits |
+| Three architectures | 10 | Fair and correctly distinguished |
+| Python design | 15 | Reusable classes, provider separation, readable code |
+| Verification | 10 | Tests, seeds, reproducible commands |
+| Experimental validity | 10 | Fair comparisons and disruption evidence |
+| Safety and limitations | 5 | Appropriate governance and bounded claims |
+
+## Oral-defense questions
+
+- Which model assumption most strongly affects your result?
+- How do you know that a TISE gain is not simply caused by a stronger stakeholder reasoner?
+- Which stakeholder could lose while aggregate value rises?
+- Which PUDAL recommendation requires human authorization?
+- What observation would falsify your model?
+- What data would be required before real-world deployment?

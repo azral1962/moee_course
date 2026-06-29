@@ -1,0 +1,712 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "",
+    "text": "Course Overview\nThis course teaches learners to define, model, simulate, and evaluate a Mission-Oriented Ecosystem Engineering (MOEE) system. The running case is a campus food-service ecosystem, but the method transfers to elderly services, education, health care, public transportation, and home-based business.\nThe course keeps three distinctions visible from the beginning:",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#audience-and-prerequisites",
+    "href": "index.html#audience-and-prerequisites",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "Audience and prerequisites",
+    "text": "Audience and prerequisites\nThe course is intended for advanced undergraduate students, graduate students, public-service designers, systems engineers, policy analysts, and software practitioners. Learners should be able to read basic algebra and simple Python. Prior knowledge of artificial intelligence, economics, or simulation is helpful but not required.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-outcomes",
+    "href": "index.html#learning-outcomes",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "Learning outcomes",
+    "text": "Learning outcomes\nBy the end of the course, learners will be able to:\n\nidentify user, source, regulator/governance, and operator stakeholders;\ndefine stakeholder missions, VOMR accounts, and PSKVE exchanges;\nconstruct and interpret stakeholder MIGs;\ndistinguish MIG reasoning from MIG setup and coordination;\nexplain how Triune Intelligence drives the PUDAL Engine;\nimplement baseline, SOTA, and TISE simulations using reusable Python classes;\nconnect Ollama, OpenAI, or DeepSeek to auditable agent decisions;\ndesign normal and disruptive experiments; and\nevaluate mission achievement, value creation, equity, and resilience without overclaiming results.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#suggested-12-session-schedule",
+    "href": "index.html#suggested-12-session-schedule",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "Suggested 12-session schedule",
+    "text": "Suggested 12-session schedule\n\n\n\nSession\nTopic\nWorkshop output\n\n\n\n\n1\nPublic needs as ecosystems\nCase boundary and public need\n\n\n2\nStakeholder roles and missions\nStakeholder registry\n\n\n3\nVOMR accounting\nOpening accounts and update rules\n\n\n4\nPSKVE Exchange Engine\nExchange matrix\n\n\n5\nMIG construction and reasoning\nStakeholder MIG definitions\n\n\n6\nPUDAL and Triune Intelligence\nControl-loop map\n\n\n7\nBaseline, SOTA, and TISE\nThree-architecture specification\n\n\n8\nObjectives and experimental validity\nMetrics and hypotheses\n\n\n9\nPython domain model\nExecutable baseline\n\n\n10\nSmart contract and agentic PUDAL\nExecutable SOTA and TISE\n\n\n11\nDisruption experiments and analysis\nComparative CSV results\n\n\n12\nCapstone presentation\nDefensible MOEE model",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "Assessment",
+    "text": "Assessment\n\nConcept checks and short exercises: 15%\nModeling worksheet: 20%\nPython labs: 30%\nCapstone case, simulation, and defense: 35%\n\nThe capstone is assessed on conceptual consistency, traceability from public need to code, experimental validity, reproducibility, and appropriate treatment of safety and stakeholder autonomy.",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#repository-resources",
+    "href": "index.html#repository-resources",
+    "title": "Learning Mission-Oriented Ecosystem Engineering",
+    "section": "Repository resources",
+    "text": "Repository resources\n\nManuscript: ../paper.qmd\nPython package: ../simulation/\nProvider configuration: ../simulation/.env.example\nExecutable labs: labs/\nBlank modeling templates: worksheets.qmd\n\nRender this course from the repository root with:\nquarto render course",
+    "crumbs": [
+      "Course Overview"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html",
+    "href": "01-foundations.html",
+    "title": "1  MOEE Foundations",
+    "section": "",
+    "text": "1.1 Why ecosystem engineering?\nA public need is rarely delivered by one organization. Food access, health care, mobility, education, elderly care, and local enterprise depend on stakeholders with different resources, time horizons, authority, and definitions of value. MOEE treats this network as an engineered ecosystem without pretending that it is a single firm or that stakeholders surrender their autonomy.\nThe modeling objective is not merely to maximize transactions. It is to make the following chain explicit and testable:\n[ . ]",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#core-model",
+    "href": "01-foundations.html#core-model",
+    "title": "1  MOEE Foundations",
+    "section": "1.2 Core model",
+    "text": "1.2 Core model\n\n\n\n\n\n\n\n\nElement\nQuestion answered\nTypical artifact\n\n\n\n\nStakeholder classes\nWho uses, sources, governs, and operates the ecosystem?\nStakeholder registry\n\n\nMissions\nWhat must each stakeholder accomplish?\nMission statements and constraints\n\n\nMIG\nWhen and how intensely is mission capacity used?\n(I_i(t))\n\n\nPSKVE\nWhat multidimensional exchanges occur?\nProduct–Service–Knowledge–Value–Environment matrix\n\n\nVOMR\nWhat state and wealth changes are recorded?\nValue–Output–Mission–Resource accounts\n\n\nPUDAL\nHow are state, policy, learning, and control connected?\nFeedback-control map\n\n\nTriune Intelligence\nWhich forms of intelligence inform control?\nHNI–CCI–AI evidence map\n\n\nTriple Markets\nHow are assets, liquidity, and operations separated?\nStock–Financial–R–O mapping",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#stakeholder-ontology",
+    "href": "01-foundations.html#stakeholder-ontology",
+    "title": "1  MOEE Foundations",
+    "section": "1.3 Stakeholder ontology",
+    "text": "1.3 Stakeholder ontology\nEvery case begins with four functional roles:\n\nUser stakeholders consume or benefit from mission outputs.\nSource stakeholders supply resources, products, services, or knowledge.\nRegulator/governance stakeholders define and enforce rules, rights, and public objectives.\nOperator stakeholders schedule, match, route, settle, or maintain ecosystem activity.\n\nAn organization may occupy several roles. The model should represent each role explicitly when its mission, constraints, or accounts differ.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#mission-intensity-graphs",
+    "href": "01-foundations.html#mission-intensity-graphs",
+    "title": "1  MOEE Foundations",
+    "section": "1.4 Mission Intensity Graphs",
+    "text": "1.4 Mission Intensity Graphs\nFor stakeholder (i), the MIG is\n[ I_i(t), ]\nwhere zero means inactive mission capacity and one means fully scheduled capacity. A simple output relationship is\n[ O_i(t)=f_i(R_i(t),C_i,E_i(t))I_i(t). ]\nThe MIG is not merely a demand curve. Depending on the stakeholder, it may represent care visits, teaching load, regulatory inspection, vehicle deployment, production, platform throughput, or another mission-specific capacity.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#two-independent-design-axes",
+    "href": "01-foundations.html#two-independent-design-axes",
+    "title": "1  MOEE Foundations",
+    "section": "1.5 Two independent design axes",
+    "text": "1.5 Two independent design axes\n\n1.5.1 Reasoning axis ()\n\nHistorical: replay or deterministic rules.\nProbabilistic: sample from uncertainty-aware models.\nAgentic: reason from goals, beliefs, observations, and constraints.\nHybrid: combine several reasoners with explicit weights or gates.\n\n\n\n1.5.2 Setup axis ()\n\nIndependent: stakeholders commit their own MIGs.\nSmart contract: stakeholders prenegotiate a fixed coordination rule.\nAdaptive cooperative: PUDAL recommends revisions using Triune Intelligence and current feedback.\n\nKeeping these axes separate prevents a common error: attributing an improvement to TISE when it actually came from giving one model a more capable stakeholder reasoner.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#pskve-and-vomr",
+    "href": "01-foundations.html#pskve-and-vomr",
+    "title": "1  MOEE Foundations",
+    "section": "1.6 PSKVE and VOMR",
+    "text": "1.6 PSKVE and VOMR\nPSKVE describes what crosses stakeholder boundaries:\n\nProducts\nServices\nKnowledge\nValues\nEnvironment\n\nVOMR describes what is accounted for:\n\nValue\nOutput\nMission\nResources\n\nThe causal transformation is (RMOV), while VOMR is the reporting order. Financial margin is only one component of systemic value:\n[ V_i=_i-_i. ]\nMission achievement, externalities, equity, safety, and resilience must remain visible rather than being silently collapsed into profit.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#triune-intelligence-and-pudal",
+    "href": "01-foundations.html#triune-intelligence-and-pudal",
+    "title": "1  MOEE Foundations",
+    "section": "1.7 Triune Intelligence and PUDAL",
+    "text": "1.7 Triune Intelligence and PUDAL\nTriune Intelligence combines:\n\nHuman/Natural Intelligence (HNI)\nCrowd/Cultural/Collective Intelligence (CCI)\nArtificial Intelligence (AI)\n\nPUDAL uses these channels to perceive state, interpret missions and policy, recommend coordinated actions, and learn from outcomes. AI is one input—not the sovereign objective setter. High-stakes decisions still require domain authority, consent, auditability, and appropriate human judgment.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#three-validation-claims",
+    "href": "01-foundations.html#three-validation-claims",
+    "title": "1  MOEE Foundations",
+    "section": "1.8 Three validation claims",
+    "text": "1.8 Three validation claims\n\nBaseline: validates that stakeholders, missions, MIGs, VOMR accounts, and wealth creation form a coherent executable ecosystem.\nSOTA: validates that a PSKVE Exchange Engine and prenegotiated smart contract can improve a chosen objective relative to baseline.\nTISE: tests whether adaptive cooperative PUDAL control improves value creation and withstands disruptions better than the strongest fixed alternative.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "01-foundations.html#concept-check",
+    "href": "01-foundations.html#concept-check",
+    "title": "1  MOEE Foundations",
+    "section": "1.9 Concept check",
+    "text": "1.9 Concept check\nFor a public-transport case, identify one stakeholder for each role, give each one a possible MIG, and explain why passenger demand and fleet deployment should not be represented by the same MIG.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>MOEE Foundations</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html",
+    "href": "02-modeling-tutorial.html",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "",
+    "text": "2.1 Step 1 — State the public need and boundary\nThis tutorial uses campus food service as the worked case. Replace the worked entries with your own case while preserving the sequence and traceability.\nWrite one sentence describing the need, population, place, and time horizon.\nBoundary decisions:\nAcceptance check: every modeled exchange and metric must be relevant to this boundary.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-1-state-the-public-need-and-boundary",
+    "href": "02-modeling-tutorial.html#step-1-state-the-public-need-and-boundary",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "",
+    "text": "The campus community needs safe, nutritious, affordable meals during operating days while vendors remain viable and waste and disruption losses remain acceptable.\n\n\n\nIncluded: students, vendors, suppliers, campus regulators, service operators, ordering and delivery.\nExcluded in the first model: regional agricultural policy and long-term campus construction.\nTime step: one service period.\nHorizon: 24 service periods.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-2-register-stakeholder-roles",
+    "href": "02-modeling-tutorial.html#step-2-register-stakeholder-roles",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.2 Step 2 — Register stakeholder roles",
+    "text": "2.2 Step 2 — Register stakeholder roles\n\n\n\n\n\n\n\n\n\nID\nFunctional role\nWorked stakeholder\nWhy it is needed\n\n\n\n\nusers\nUser\nStudents\nConsume meals and express demand and affordability needs\n\n\nsources\nSource\nFood vendors and suppliers\nTransform ingredients and labor into meals\n\n\nregulators\nRegulator/governance\nCampus food authority\nEnforces safety, access, and sustainability policy\n\n\noperators\nOperator\nCampus food-service operator\nCoordinates schedules, ordering, settlement, and delivery\n\n\n\nDo not add a stakeholder merely because it exists in reality. Add it when it owns a distinct mission, constraint, decision, exchange, or VOMR account.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-3-define-missions-and-constraints",
+    "href": "02-modeling-tutorial.html#step-3-define-missions-and-constraints",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.3 Step 3 — Define missions and constraints",
+    "text": "2.3 Step 3 — Define missions and constraints\nUse this pattern:\n\nVerb + mission output + beneficiary + timing + constraints.\n\nWorked missions:\n\nUsers: obtain affordable, nutritious meals during required service periods.\nSources: produce safe meals while maintaining positive operating value.\nRegulators: maintain safety and sustainability requirements.\nOperators: provide reliable matching, scheduling, and settlement.\n\nFor each mission, record hard constraints separately from preferences. Safety limits are not weights that may be traded away for profit.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-4-open-vomr-accounts",
+    "href": "02-modeling-tutorial.html#step-4-open-vomr-accounts",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.4 Step 4 — Open VOMR accounts",
+    "text": "2.4 Step 4 — Open VOMR accounts\n\n\n\n\n\n\n\n\n\n\nStakeholder\nValue (V)\nOutput (O)\nMission (M)\nResources (R)\n\n\n\n\nUsers\naffordability/utility account\nmeals accessed\naccess achievement\nbudget, time, information\n\n\nSources\noperating value\nmeals produced\nproduction achievement\ningredients, labor, assets\n\n\nRegulators\npublic-value account\ninspections/policy services\ncompliance achievement\nstaff, authority, knowledge\n\n\nOperators\nservice value\norders routed/settled\nreliability achievement\nplatform, staff, liquidity\n\n\n\nSpecify units and update rules. If an account cannot be updated from simulation events, it is still a concept—not yet a computational variable.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-5-map-pskve-exchanges",
+    "href": "02-modeling-tutorial.html#step-5-map-pskve-exchanges",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.5 Step 5 — Map PSKVE exchanges",
+    "text": "2.5 Step 5 — Map PSKVE exchanges\nCreate one row per directed exchange.\n\n\n\n\n\n\n\n\n\n\n\nSource → destination\nProduct\nService\nKnowledge\nValue\nEnvironment\n\n\n\n\nSuppliers → vendors\nIngredients\nReplenishment\nAvailability data\nPayment claim\nCold-chain conditions\n\n\nVendors → users\nMeals\nPreparation\nNutrition/allergen data\nAffordability and revenue\nPackaging and waste\n\n\nUsers → operators\n—\nOrder request\nDemand and feedback\nPayment\nQueue conditions\n\n\nRegulators → ecosystem\n—\nInspection\nRules and alerts\nSafety assurance\nFacility constraints\n\n\n\nCheck that every critical resource and output has a corresponding exchange path.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-6-define-stakeholder-migs",
+    "href": "02-modeling-tutorial.html#step-6-define-stakeholder-migs",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.6 Step 6 — Define stakeholder MIGs",
+    "text": "2.6 Step 6 — Define stakeholder MIGs\nFor each stakeholder, complete:\n\n\n\nField\nExample\n\n\n\n\nMIG meaning\nFraction of vendor meal-production capacity scheduled\n\n\nTime step\nOne meal-service period\n\n\nZero\nNo production scheduled\n\n\nOne\nFull feasible production capacity\n\n\nInputs\ndemand, stock, staffing, disruption, policy\n\n\nHard limits\ningredients, labor, safety, liquidity\n\n\nReasoner\nhistorical, probabilistic, agentic, or hybrid\n\n\n\nUse different symbols or stakeholder IDs even when MIGs interact. A user demand MIG and vendor production MIG may correlate, but they are not interchangeable.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-7-select-setup-modes",
+    "href": "02-modeling-tutorial.html#step-7-select-setup-modes",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.7 Step 7 — Select setup modes",
+    "text": "2.7 Step 7 — Select setup modes\nModel all three for a fair comparison:\n\nBaseline: each stakeholder commits its proposal independently.\nSOTA: stakeholders prenegotiate a smart contract, objective, and fixed coordination rule.\nTISE: stakeholders cooperate through adaptive PUDAL recommendations informed by Triune Intelligence.\n\nWrite the prenegotiated contract before running SOTA. Changing it in response to a simulated shock would quietly turn it into an adaptive model.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-8-define-objective-functions",
+    "href": "02-modeling-tutorial.html#step-8-define-objective-functions",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.8 Step 8 — Define objective functions",
+    "text": "2.8 Step 8 — Define objective functions\nStart with separate metrics:\n\nmeal availability;\naffordability;\nvendor net value;\nwaste;\nsafety compliance;\naverage mission achievement; and\ndisruption retention and recovery.\n\nOnly then define an Ecosystem Value Index:\n[ EVI(t)=_k w_k z_k(t). ]\nRecord the normalization and weights. Report component metrics beside EVI so poor performance cannot hide behind aggregation.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-9-define-scenarios",
+    "href": "02-modeling-tutorial.html#step-9-define-scenarios",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.9 Step 9 — Define scenarios",
+    "text": "2.9 Step 9 — Define scenarios\nAt minimum include:\n\nnormal demand and supply;\ndemand surge;\nsource shortage;\noperator/platform outage;\nsafety or regulatory restriction; and\ncombined disruption.\n\nSpecify onset, severity, duration, and recovery criteria before running experiments.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-10-write-validation-questions",
+    "href": "02-modeling-tutorial.html#step-10-write-validation-questions",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.10 Step 10 — Write validation questions",
+    "text": "2.10 Step 10 — Write validation questions\n\nVQ1: Does the baseline execute valid stakeholder MIGs and balanced VOMR updates?\nVQ2: Does each fixed SOTA contract improve its declared objective over baseline?\nVQ3: Does TISE match or exceed the strongest SOTA value result under normal operation?\nVQ4: Does TISE retain more performance or recover faster under disruption?",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-11-create-the-traceability-matrix",
+    "href": "02-modeling-tutorial.html#step-11-create-the-traceability-matrix",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.11 Step 11 — Create the traceability matrix",
+    "text": "2.11 Step 11 — Create the traceability matrix\n\n\n\n\n\n\n\n\n\n\n\n\nPublic need\nStakeholder mission\nMIG\nExchange\nVOMR update\nMetric\nCode object\n\n\n\n\nAffordable meals\nUser access\nusers intensity\nvendor → user meal\nuser O/M/V\naffordability, access\nStakeholder, Mission\n\n\nReliable supply\nVendor viability\nsources intensity\nsupplier → vendor inputs\nsource R/O/V\nnet value, shortages\nPSKVEExchangeEngine\n\n\nSafe operation\nRegulatory assurance\nregulators intensity\nregulator → ecosystem service\nregulator O/M\ncompliance\nAdaptivePUDALCoordinator\n\n\n\nIf a requirement has no code object or metric, the implementation is incomplete. If code has no requirement, it may be accidental complexity.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "02-modeling-tutorial.html#step-12-approve-the-model-specification",
+    "href": "02-modeling-tutorial.html#step-12-approve-the-model-specification",
+    "title": "2  Tutorial: Build an MOEE Model for a Specific Case",
+    "section": "2.12 Step 12 — Approve the model specification",
+    "text": "2.12 Step 12 — Approve the model specification\nBefore coding, review the model with representatives of all stakeholder classes. Record unresolved disagreements about missions, weights, data, authority, and acceptable automation. In public-need ecosystems, disagreement is model input—not noise to delete.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Tutorial: Build an MOEE Model for a Specific Case</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html",
+    "href": "03-python-simulation.html",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "",
+    "text": "3.1 Step 0 — Verify Python and tests\nThe repository already contains a standard-library implementation in ../simulation/. This chapter reconstructs the development sequence so learners understand and can replace each layer.\nRun all commands from the repository root.\nNo external Python package is required for the core simulator.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-0-verify-python-and-tests",
+    "href": "03-python-simulation.html#step-0-verify-python-and-tests",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "",
+    "text": "python --version\npython -m unittest discover -s simulation/tests -v",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-1-create-a-mission-and-vomr-account",
+    "href": "03-python-simulation.html#step-1-create-a-mission-and-vomr-account",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.2 Step 1 — Create a mission and VOMR account",
+    "text": "3.2 Step 1 — Create a mission and VOMR account\nfrom simulation.models import Mission, VOMRAccount\n\nmission = Mission(\n    name=\"Reliable meal production\",\n    target_output_per_step=55,\n    resource_per_output=1.0,\n    value_per_output=1.2,\n    resource_unit_cost=0.3,\n)\n\naccounts = VOMRAccount(value=0, output=0, mission=0, resources=120)\nMission holds stable transformation parameters. VOMRAccount holds changing state. Keeping them separate makes calibration and experiment reset easier.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-2-choose-a-stakeholder-reasoner",
+    "href": "03-python-simulation.html#step-2-choose-a-stakeholder-reasoner",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.3 Step 2 — Choose a stakeholder reasoner",
+    "text": "3.3 Step 2 — Choose a stakeholder reasoner\nHistorical reasoning:\nfrom simulation.reasoning import HistoricalReasoner\n\nreasoner = HistoricalReasoner([0.35, 0.50, 0.80, 0.65])\nProbabilistic reasoning:\nfrom simulation.reasoning import ProbabilisticReasoner\n\nreasoner = ProbabilisticReasoner(mean=0.58, stddev=0.08, seed=42)\nAgentic reasoning:\nfrom simulation.providers import ProviderFactory\nfrom simulation.reasoning import AgentReasoner\n\nprovider = ProviderFactory.create(\"heuristic\")\nreasoner = AgentReasoner(provider)\nThe heuristic provider is offline and auditable. Replace \"heuristic\" with \"ollama\", \"openai\", or \"deepseek\" after configuring credentials.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-3-construct-a-stakeholder",
+    "href": "03-python-simulation.html#step-3-construct-a-stakeholder",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.4 Step 3 — Construct a stakeholder",
+    "text": "3.4 Step 3 — Construct a stakeholder\nfrom simulation.models import Stakeholder, StakeholderRole\n\nvendor = Stakeholder(\n    stakeholder_id=\"sources\",\n    name=\"Food vendors\",\n    role=StakeholderRole.SOURCE,\n    mission=mission,\n    capacity=90,\n    accounts=accounts,\n    reasoner=reasoner,\n    resource_replenishment=45,\n)\nCreate equivalent objects for user, regulator, and operator roles. Each needs its own mission and VOMR account even if several roles belong to one institution.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-4-define-a-scenario",
+    "href": "03-python-simulation.html#step-4-define-a-scenario",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.5 Step 4 — Define a scenario",
+    "text": "3.5 Step 4 — Define a scenario\nfrom simulation.models import Scenario\n\nscenario = Scenario(\n    name=\"shortage\",\n    demand_profile=(0.35, 0.55, 0.85, 0.75),\n    disruption_profile=(0.0, 0.0, 0.7, 0.3),\n    description=\"A source shock during peak demand\",\n)\nProfiles repeat if the run is longer than the tuple. Use normalized values in ([0,1]).",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-5-select-the-ecosystem-setup",
+    "href": "03-python-simulation.html#step-5-select-the-ecosystem-setup",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.6 Step 5 — Select the ecosystem setup",
+    "text": "3.6 Step 5 — Select the ecosystem setup\nBaseline:\nfrom simulation.coordination import IndependentCoordinator\ncoordinator = IndependentCoordinator()\nSOTA:\nfrom simulation.coordination import SmartContractCoordinator, SmartContractTerms\n\ncoordinator = SmartContractCoordinator(\n    SmartContractTerms(\n        intensity_caps={\"sources\": 0.90},\n        role_multipliers={\"source\": 1.05, \"operator\": 1.08},\n        max_total_intensity=3.2,\n    )\n)\nTISE:\nfrom simulation.coordination import AdaptivePUDALCoordinator\ncoordinator = AdaptivePUDALCoordinator(provider, allow_fallback=True)\nThe smart contract is immutable during a run. PUDAL may adapt, but its recommendations remain bounded by resource feasibility and stakeholder policy.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-6-add-the-triple-market-system",
+    "href": "03-python-simulation.html#step-6-add-the-triple-market-system",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.7 Step 6 — Add the Triple-Market system",
+    "text": "3.7 Step 6 — Add the Triple-Market system\nfrom simulation.markets import TripleMarketSystem\n\nmarkets = TripleMarketSystem()\nsignals = markets.discover(demand=0.8, disruption=0.6)\nprint(signals.stock.availability)\nprint(signals.financial.availability)\nprint(signals.resource_output.price_multiplier)\nThe reference markets are deliberately simple. A case-specific model may subclass Market and replace its discovery equation.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-7-assemble-and-run-the-simulation",
+    "href": "03-python-simulation.html#step-7-assemble-and-run-the-simulation",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.8 Step 7 — Assemble and run the simulation",
+    "text": "3.8 Step 7 — Assemble and run the simulation\nfrom simulation.engine import MOEESimulation, SimulationConfig\n\nsimulation = MOEESimulation(\n    stakeholders=[user, vendor, regulator, operator],\n    scenario=scenario,\n    coordinator=coordinator,\n    config=SimulationConfig(steps=24, seed=42),\n)\n\nresult = simulation.run()\nprint(result.summary())\nresult.to_csv(\"results/my_case.csv\")\nThe complete runnable demo factory avoids repeating boilerplate:\npython -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 24 --output results/tise.csv",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-8-configure-an-external-agent-provider",
+    "href": "03-python-simulation.html#step-8-configure-an-external-agent-provider",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.9 Step 8 — Configure an external agent provider",
+    "text": "3.9 Step 8 — Configure an external agent provider\nCopy simulation/.env.example to .env and configure only one provider.\nOllama:\npython -m simulation --architecture tise --reasoning agent --provider ollama --steps 6\nOpenAI:\n$env:OPENAI_API_KEY=\"your-key\"\npython -m simulation --architecture tise --reasoning agent --provider openai --steps 6\nDeepSeek:\n$env:DEEPSEEK_API_KEY=\"your-key\"\npython -m simulation --architecture tise --reasoning agent --provider deepseek --steps 6\nExternal agent runs may make several requests per step: one per agent-reasoned stakeholder plus an adaptive PUDAL request. Begin with a short horizon, inspect decisions, and never commit credentials.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-9-preserve-auditability",
+    "href": "03-python-simulation.html#step-9-preserve-auditability",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.10 Step 9 — Preserve auditability",
+    "text": "3.10 Step 9 — Preserve auditability\nEvery MIGProposal records intensity, confidence, rationale, and reasoning mode. Production extensions should additionally record:\n\nprovider and model identifier;\nprompt-template version;\ninput-data version;\nraw validated decision object;\nfallback events;\npolicy and smart-contract version; and\nrandom seed.\n\nDo not store private prompts or sensitive stakeholder data without an approved data-governance design.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#step-10-extend-to-a-new-case",
+    "href": "03-python-simulation.html#step-10-extend-to-a-new-case",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.11 Step 10 — Extend to a new case",
+    "text": "3.11 Step 10 — Extend to a new case\nReplace, in order:\n\nstakeholder and mission definitions;\nVOMR units and update equations;\nPSKVE transformation logic by subclassing PSKVEExchangeEngine;\nmarket discovery equations;\nscenario profiles;\nPUDAL constraints and objective components; and\nmetrics and acceptance thresholds.\n\nKeep provider adapters, coordinator interfaces, CSV output, and tests unless the new case genuinely requires a different contract.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "03-python-simulation.html#executable-labs",
+    "href": "03-python-simulation.html#executable-labs",
+    "title": "3  Step-by-Step Python Simulation Development",
+    "section": "3.12 Executable labs",
+    "text": "3.12 Executable labs\n\nlabs/lab01_baseline.py\nlabs/lab02_compare_architectures.py\nlabs/lab03_agentic_tise.py\nlabs/lab04_custom_case.py",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html",
+    "href": "04-experiments.html",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "",
+    "text": "4.1 Factorial design\nAt minimum, cross these factors:\nDo not compare historical baseline with agentic TISE and attribute the entire difference to PUDAL. Hold the reasoning mode constant when estimating the effect of setup.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#factorial-design",
+    "href": "04-experiments.html#factorial-design",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "",
+    "text": "Factor\nLevels\n\n\n\n\nArchitecture/setup\nBaseline, SOTA, TISE\n\n\nMIG reasoning\nHistorical, probabilistic, agentic, hybrid\n\n\nScenario\nNormal and named disruptions\n\n\nObjective\nValue, mission, equity, sustainability, resilience\n\n\nSeed\nMultiple seeds for stochastic modes",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#minimum-experiment-sequence",
+    "href": "04-experiments.html#minimum-experiment-sequence",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "4.2 Minimum experiment sequence",
+    "text": "4.2 Minimum experiment sequence\n\nRun baseline/historical to validate entities, flows, and VOMR conservation.\nRun baseline/probabilistic across seeds to validate uncertainty handling.\nRun SOTA with each prenegotiated objective.\nRun TISE under the same normal scenarios.\nRepeat all architectures under disruptions.\nCompare TISE with the strongest SOTA configuration, not merely the weakest.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#metrics",
+    "href": "04-experiments.html#metrics",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "4.3 Metrics",
+    "text": "4.3 Metrics\n\n4.3.1 Value creation\n[ V_i=_i-_i ]\nReport stakeholder-level and ecosystem aggregates. A positive total can coexist with an unacceptable loss for one stakeholder.\n\n\n4.3.2 Mission achievement\n[ A_i(t)=(1,). ]\n\n\n4.3.3 Performance retention\n[ Retention=. ]\n\n\n4.3.4 Recovery time\nCount time steps from disruption onset until performance returns to a declared fraction of its normal reference.\n\n\n4.3.5 Cumulative disruption loss\n[ L=t(0,Performance{normal}(t)-Performance_{disrupted}(t)). ]",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#reproducible-batch-exercise",
+    "href": "04-experiments.html#reproducible-batch-exercise",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "4.4 Reproducible batch exercise",
+    "text": "4.4 Reproducible batch exercise\nRun each command with the same step count and seed:\npython -m simulation --architecture baseline --reasoning probabilistic --steps 24 --seed 42 --output results/baseline.csv\npython -m simulation --architecture sota --reasoning probabilistic --steps 24 --seed 42 --output results/sota.csv\npython -m simulation --architecture tise --reasoning probabilistic --steps 24 --seed 42 --output results/tise.csv\nThen repeat with several seeds and compute mean, dispersion, worst case, and confidence intervals. Agentic runs should also report provider failures and fallback rates.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#interpretation-rules",
+    "href": "04-experiments.html#interpretation-rules",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "4.5 Interpretation rules",
+    "text": "4.5 Interpretation rules\n\nBaseline success supports model existence, not optimality.\nSOTA improvement supports the selected fixed contract, not all smart contracts.\nTISE improvement in normal conditions supports adaptive value creation only for tested objectives and cases.\nTISE resilience requires evidence across disruption types, severities, and durations.\nA simulator demonstrates behavior of assumptions. It does not by itself validate those assumptions against the real world.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "04-experiments.html#threats-to-validity-checklist",
+    "href": "04-experiments.html#threats-to-validity-checklist",
+    "title": "4  Experiments, Evidence, and Interpretation",
+    "section": "4.6 Threats to validity checklist",
+    "text": "4.6 Threats to validity checklist\n\nAre stakeholder missions elicited from actual stakeholders?\nAre VOMR units and update equations dimensionally valid?\nAre safety constraints modeled as hard constraints?\nIs the baseline calibrated to observations?\nAre models compared using identical random seeds and scenarios?\nDoes the agent receive information unavailable in the real system?\nAre provider prompts or model changes documented?\nAre results robust to weights and objective functions?\nAre distributional effects reported alongside aggregate wealth?",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Experiments, Evidence, and Interpretation</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html",
+    "href": "05-capstone.html",
+    "title": "5  Capstone Project",
+    "section": "",
+    "text": "5.1 Task\nDesign and simulate an MOEE model for one public-need ecosystem:",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html#task",
+    "href": "05-capstone.html#task",
+    "title": "5  Capstone Project",
+    "section": "",
+    "text": "elderly services;\neducation;\nhealth care;\npublic transportation;\nhome-based business; or\nanother instructor-approved case.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html#required-deliverables",
+    "href": "05-capstone.html#required-deliverables",
+    "title": "5  Capstone Project",
+    "section": "5.2 Required deliverables",
+    "text": "5.2 Required deliverables\n\nA two-page case boundary and public-need statement.\nStakeholder registry with user, source, regulator/governance, and operator roles.\nMission and hard-constraint specification.\nPSKVE exchange matrix.\nVOMR accounts with units and update equations.\nMIG definition and selected reasoning mode for every stakeholder.\nBaseline, SOTA smart contract, and adaptive TISE specifications.\nNormal and at least three disruptive scenarios.\nReusable Python implementation derived from simulation/.\nAutomated tests and reproducible run commands.\nResults comparing value creation and resilience.\nA limitations, safety, governance, and next-evidence section.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html#recommended-milestones",
+    "href": "05-capstone.html#recommended-milestones",
+    "title": "5  Capstone Project",
+    "section": "5.3 Recommended milestones",
+    "text": "5.3 Recommended milestones\n\nWeek 1: case boundary and stakeholders\nWeek 2: missions, PSKVE, and VOMR\nWeek 3: MIGs and architecture definitions\nWeek 4: baseline implementation and validation\nWeek 5: SOTA and TISE implementation\nWeek 6: experiments, analysis, and defense",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html#rubric",
+    "href": "05-capstone.html#rubric",
+    "title": "5  Capstone Project",
+    "section": "5.4 Rubric",
+    "text": "5.4 Rubric\n\n\n\n\n\n\n\n\nCriterion\nPoints\nEvidence\n\n\n\n\nPublic need and boundary\n10\nClear population, place, horizon, exclusions\n\n\nStakeholders and missions\n15\nComplete roles, autonomy, constraints\n\n\nPSKVE and VOMR\n15\nTraceable exchanges and valid accounts\n\n\nMIG design\n10\nMeaning, units, reasoning, limits\n\n\nThree architectures\n10\nFair and correctly distinguished\n\n\nPython design\n15\nReusable classes, provider separation, readable code\n\n\nVerification\n10\nTests, seeds, reproducible commands\n\n\nExperimental validity\n10\nFair comparisons and disruption evidence\n\n\nSafety and limitations\n5\nAppropriate governance and bounded claims",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "05-capstone.html#oral-defense-questions",
+    "href": "05-capstone.html#oral-defense-questions",
+    "title": "5  Capstone Project",
+    "section": "5.5 Oral-defense questions",
+    "text": "5.5 Oral-defense questions\n\nWhich model assumption most strongly affects your result?\nHow do you know that a TISE gain is not simply caused by a stronger stakeholder reasoner?\nWhich stakeholder could lose while aggregate value rises?\nWhich PUDAL recommendation requires human authorization?\nWhat observation would falsify your model?\nWhat data would be required before real-world deployment?",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Capstone Project</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html",
+    "href": "instructor-guide.html",
+    "title": "6  Instructor Guide",
+    "section": "",
+    "text": "6.1 Teaching approach\nUse one concept–artifact–code loop in every session:\nAvoid beginning with the AI provider. Learners should first produce a coherent baseline using historical reasoning. Otherwise, model-generated decisions can conceal missing missions, invalid accounts, or undefined objectives.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#teaching-approach",
+    "href": "instructor-guide.html#teaching-approach",
+    "title": "6  Instructor Guide",
+    "section": "",
+    "text": "introduce one MOEE concept;\nproduce one modeling artifact;\nconnect the artifact to one Python class;\ntest one claim; and\nreflect on stakeholder and validity implications.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#suggested-class-pattern",
+    "href": "instructor-guide.html#suggested-class-pattern",
+    "title": "6  Instructor Guide",
+    "section": "6.2 Suggested class pattern",
+    "text": "6.2 Suggested class pattern\n\n20 minutes: concept and worked example\n25 minutes: team modeling exercise\n25 minutes: Python lab\n15 minutes: comparison and critique\n5 minutes: exit ticket",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#lab-progression",
+    "href": "instructor-guide.html#lab-progression",
+    "title": "6  Instructor Guide",
+    "section": "6.3 Lab progression",
+    "text": "6.3 Lab progression\n\nlab01_baseline.py: validate execution and VOMR updates.\nlab02_compare_architectures.py: isolate coordination effects.\nlab03_agentic_tise.py: add a provider behind an interface.\nlab04_custom_case.py: transfer MOEE to elderly home-care coordination.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#discussion-prompts",
+    "href": "instructor-guide.html#discussion-prompts",
+    "title": "6  Instructor Guide",
+    "section": "6.4 Discussion prompts",
+    "text": "6.4 Discussion prompts\n\nWho is authorized to define the ecosystem objective?\nWhen is a smart contract preferable to adaptive control?\nWhich intelligence channel is absent from the available data?\nWhat should PUDAL recommend but never execute automatically?\nHow should a stakeholder reject or renegotiate a recommendation?",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#safety-notes",
+    "href": "instructor-guide.html#safety-notes",
+    "title": "6  Instructor Guide",
+    "section": "6.5 Safety notes",
+    "text": "6.5 Safety notes\nHealth care, elderly services, education involving minors, and regulated transportation require stronger safeguards than the toy simulator provides. Treat the package as a research and teaching instrument. It lacks production identity, privacy, consent, security, clinical, legal, and operational-assurance controls.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "instructor-guide.html#instructor-setup",
+    "href": "instructor-guide.html#instructor-setup",
+    "title": "6  Instructor Guide",
+    "section": "6.6 Instructor setup",
+    "text": "6.6 Instructor setup\nBefore class:\npython -m unittest discover -s simulation/tests -v\npython -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 6\nquarto render course\nUse the heuristic provider for guaranteed offline delivery. Demonstrate an external provider only when credentials, network access, cost controls, and data policy are already approved.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Instructor Guide</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html",
+    "href": "worksheets.html",
+    "title": "7  Modeling Worksheets",
+    "section": "",
+    "text": "7.1 Case boundary\nCopy these tables into a case report or spreadsheet.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#case-boundary",
+    "href": "worksheets.html#case-boundary",
+    "title": "7  Modeling Worksheets",
+    "section": "",
+    "text": "Field\nEntry\n\n\n\n\nPublic need\n\n\n\nBeneficiary population\n\n\n\nPlace/system boundary\n\n\n\nTime step and horizon\n\n\n\nIncluded processes\n\n\n\nExplicit exclusions\n\n\n\nDecision owner",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#stakeholder-registry",
+    "href": "worksheets.html#stakeholder-registry",
+    "title": "7  Modeling Worksheets",
+    "section": "7.2 Stakeholder registry",
+    "text": "7.2 Stakeholder registry\n\n\n\n\n\n\n\n\n\n\n\n\nID\nName\nRole\nMission\nHard constraints\nDecisions\nData available\n\n\n\n\n\n\nUser/source/regulator/operator",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#vomr-accounts",
+    "href": "worksheets.html#vomr-accounts",
+    "title": "7  Modeling Worksheets",
+    "section": "7.3 VOMR accounts",
+    "text": "7.3 VOMR accounts\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nAccount\nSymbol\nUnit\nOpening value\nUpdate event\nUpdate equation\n\n\n\n\n\nValue\n\n\n\n\n\n\n\n\nOutput\n\n\n\n\n\n\n\n\nMission\n\n\n\n\n\n\n\n\nResources",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#pskve-exchanges",
+    "href": "worksheets.html#pskve-exchanges",
+    "title": "7  Modeling Worksheets",
+    "section": "7.4 PSKVE exchanges",
+    "text": "7.4 PSKVE exchanges\n\n\n\n\n\n\n\n\n\n\n\n\n\nSource\nDestination\nProduct\nService\nKnowledge\nValues\nEnvironment\nTrigger",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#mig-specification",
+    "href": "worksheets.html#mig-specification",
+    "title": "7  Modeling Worksheets",
+    "section": "7.5 MIG specification",
+    "text": "7.5 MIG specification\n\n\n\n\n\n\n\n\n\n\n\n\n\nStakeholder\nMIG meaning\nTime unit\nZero\nOne\nInputs\nHard limits\nReasoning mode",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#setup-specification",
+    "href": "worksheets.html#setup-specification",
+    "title": "7  Modeling Worksheets",
+    "section": "7.6 Setup specification",
+    "text": "7.6 Setup specification\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nSetup operator\nNegotiated before run\nMay adapt during run\nAuthority and consent\nObjective\n\n\n\n\nBaseline\nIndependent\nN/A\nNo\nStakeholder\nLocal\n\n\nSOTA\nSmart contract\nYes\nNo\nContract parties\n\n\n\nTISE\nAdaptive PUDAL\nInitial policy\nYes\nCooperative governance",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#scenario-definition",
+    "href": "worksheets.html#scenario-definition",
+    "title": "7  Modeling Worksheets",
+    "section": "7.7 Scenario definition",
+    "text": "7.7 Scenario definition\n\n\n\n\n\n\n\n\n\n\n\nScenario\nOnset\nSeverity\nDuration\nAffected resources/exchanges\nRecovery condition\n\n\n\n\nNormal\n\n0",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#experiment-matrix",
+    "href": "worksheets.html#experiment-matrix",
+    "title": "7  Modeling Worksheets",
+    "section": "7.8 Experiment matrix",
+    "text": "7.8 Experiment matrix\n\n\n\n\n\n\n\n\n\n\n\n\nArchitecture\nReasoner\nScenario\nObjective\nSeed\nRepetitions\nOutput file",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  },
+  {
+    "objectID": "worksheets.html#traceability",
+    "href": "worksheets.html#traceability",
+    "title": "7  Modeling Worksheets",
+    "section": "7.9 Traceability",
+    "text": "7.9 Traceability\n\n\n\n\n\n\n\n\n\n\n\n\n\nPublic need\nMission\nMIG\nPSKVE exchange\nVOMR update\nMetric\nPython object\nTest",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Modeling Worksheets</span>"
+    ]
+  }
+]

@@ -1,0 +1,226 @@
+# Step-by-Step Python Simulation Development
+
+The repository already contains a standard-library implementation in `../simulation/`. This chapter reconstructs the development sequence so learners understand and can replace each layer.
+
+Run all commands from the repository root.
+
+## Step 0 — Verify Python and tests
+
+```powershell
+python --version
+python -m unittest discover -s simulation/tests -v
+```
+
+No external Python package is required for the core simulator.
+
+## Step 1 — Create a mission and VOMR account
+
+```python
+from simulation.models import Mission, VOMRAccount
+
+mission = Mission(
+    name="Reliable meal production",
+    target_output_per_step=55,
+    resource_per_output=1.0,
+    value_per_output=1.2,
+    resource_unit_cost=0.3,
+)
+
+accounts = VOMRAccount(value=0, output=0, mission=0, resources=120)
+```
+
+`Mission` holds stable transformation parameters. `VOMRAccount` holds changing state. Keeping them separate makes calibration and experiment reset easier.
+
+## Step 2 — Choose a stakeholder reasoner
+
+Historical reasoning:
+
+```python
+from simulation.reasoning import HistoricalReasoner
+
+reasoner = HistoricalReasoner([0.35, 0.50, 0.80, 0.65])
+```
+
+Probabilistic reasoning:
+
+```python
+from simulation.reasoning import ProbabilisticReasoner
+
+reasoner = ProbabilisticReasoner(mean=0.58, stddev=0.08, seed=42)
+```
+
+Agentic reasoning:
+
+```python
+from simulation.providers import ProviderFactory
+from simulation.reasoning import AgentReasoner
+
+provider = ProviderFactory.create("heuristic")
+reasoner = AgentReasoner(provider)
+```
+
+The heuristic provider is offline and auditable. Replace `"heuristic"` with `"ollama"`, `"openai"`, or `"deepseek"` after configuring credentials.
+
+## Step 3 — Construct a stakeholder
+
+```python
+from simulation.models import Stakeholder, StakeholderRole
+
+vendor = Stakeholder(
+    stakeholder_id="sources",
+    name="Food vendors",
+    role=StakeholderRole.SOURCE,
+    mission=mission,
+    capacity=90,
+    accounts=accounts,
+    reasoner=reasoner,
+    resource_replenishment=45,
+)
+```
+
+Create equivalent objects for user, regulator, and operator roles. Each needs its own mission and VOMR account even if several roles belong to one institution.
+
+## Step 4 — Define a scenario
+
+```python
+from simulation.models import Scenario
+
+scenario = Scenario(
+    name="shortage",
+    demand_profile=(0.35, 0.55, 0.85, 0.75),
+    disruption_profile=(0.0, 0.0, 0.7, 0.3),
+    description="A source shock during peak demand",
+)
+```
+
+Profiles repeat if the run is longer than the tuple. Use normalized values in \([0,1]\).
+
+## Step 5 — Select the ecosystem setup
+
+Baseline:
+
+```python
+from simulation.coordination import IndependentCoordinator
+coordinator = IndependentCoordinator()
+```
+
+SOTA:
+
+```python
+from simulation.coordination import SmartContractCoordinator, SmartContractTerms
+
+coordinator = SmartContractCoordinator(
+    SmartContractTerms(
+        intensity_caps={"sources": 0.90},
+        role_multipliers={"source": 1.05, "operator": 1.08},
+        max_total_intensity=3.2,
+    )
+)
+```
+
+TISE:
+
+```python
+from simulation.coordination import AdaptivePUDALCoordinator
+coordinator = AdaptivePUDALCoordinator(provider, allow_fallback=True)
+```
+
+The smart contract is immutable during a run. PUDAL may adapt, but its recommendations remain bounded by resource feasibility and stakeholder policy.
+
+## Step 6 — Add the Triple-Market system
+
+```python
+from simulation.markets import TripleMarketSystem
+
+markets = TripleMarketSystem()
+signals = markets.discover(demand=0.8, disruption=0.6)
+print(signals.stock.availability)
+print(signals.financial.availability)
+print(signals.resource_output.price_multiplier)
+```
+
+The reference markets are deliberately simple. A case-specific model may subclass `Market` and replace its discovery equation.
+
+## Step 7 — Assemble and run the simulation
+
+```python
+from simulation.engine import MOEESimulation, SimulationConfig
+
+simulation = MOEESimulation(
+    stakeholders=[user, vendor, regulator, operator],
+    scenario=scenario,
+    coordinator=coordinator,
+    config=SimulationConfig(steps=24, seed=42),
+)
+
+result = simulation.run()
+print(result.summary())
+result.to_csv("results/my_case.csv")
+```
+
+The complete runnable demo factory avoids repeating boilerplate:
+
+```powershell
+python -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 24 --output results/tise.csv
+```
+
+## Step 8 — Configure an external agent provider
+
+Copy `simulation/.env.example` to `.env` and configure only one provider.
+
+Ollama:
+
+```powershell
+python -m simulation --architecture tise --reasoning agent --provider ollama --steps 6
+```
+
+OpenAI:
+
+```powershell
+$env:OPENAI_API_KEY="your-key"
+python -m simulation --architecture tise --reasoning agent --provider openai --steps 6
+```
+
+DeepSeek:
+
+```powershell
+$env:DEEPSEEK_API_KEY="your-key"
+python -m simulation --architecture tise --reasoning agent --provider deepseek --steps 6
+```
+
+External agent runs may make several requests per step: one per agent-reasoned stakeholder plus an adaptive PUDAL request. Begin with a short horizon, inspect decisions, and never commit credentials.
+
+## Step 9 — Preserve auditability
+
+Every `MIGProposal` records intensity, confidence, rationale, and reasoning mode. Production extensions should additionally record:
+
+- provider and model identifier;
+- prompt-template version;
+- input-data version;
+- raw validated decision object;
+- fallback events;
+- policy and smart-contract version; and
+- random seed.
+
+Do not store private prompts or sensitive stakeholder data without an approved data-governance design.
+
+## Step 10 — Extend to a new case
+
+Replace, in order:
+
+1. stakeholder and mission definitions;
+2. VOMR units and update equations;
+3. PSKVE transformation logic by subclassing `PSKVEExchangeEngine`;
+4. market discovery equations;
+5. scenario profiles;
+6. PUDAL constraints and objective components; and
+7. metrics and acceptance thresholds.
+
+Keep provider adapters, coordinator interfaces, CSV output, and tests unless the new case genuinely requires a different contract.
+
+## Executable labs
+
+- `labs/lab01_baseline.py`
+- `labs/lab02_compare_architectures.py`
+- `labs/lab03_agentic_tise.py`
+- `labs/lab04_custom_case.py`

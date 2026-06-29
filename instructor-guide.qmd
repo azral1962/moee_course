@@ -1,0 +1,52 @@
+# Instructor Guide
+
+## Teaching approach
+
+Use one concept–artifact–code loop in every session:
+
+1. introduce one MOEE concept;
+2. produce one modeling artifact;
+3. connect the artifact to one Python class;
+4. test one claim; and
+5. reflect on stakeholder and validity implications.
+
+Avoid beginning with the AI provider. Learners should first produce a coherent baseline using historical reasoning. Otherwise, model-generated decisions can conceal missing missions, invalid accounts, or undefined objectives.
+
+## Suggested class pattern
+
+- 20 minutes: concept and worked example
+- 25 minutes: team modeling exercise
+- 25 minutes: Python lab
+- 15 minutes: comparison and critique
+- 5 minutes: exit ticket
+
+## Lab progression
+
+1. `lab01_baseline.py`: validate execution and VOMR updates.
+2. `lab02_compare_architectures.py`: isolate coordination effects.
+3. `lab03_agentic_tise.py`: add a provider behind an interface.
+4. `lab04_custom_case.py`: transfer MOEE to elderly home-care coordination.
+
+## Discussion prompts
+
+- Who is authorized to define the ecosystem objective?
+- When is a smart contract preferable to adaptive control?
+- Which intelligence channel is absent from the available data?
+- What should PUDAL recommend but never execute automatically?
+- How should a stakeholder reject or renegotiate a recommendation?
+
+## Safety notes
+
+Health care, elderly services, education involving minors, and regulated transportation require stronger safeguards than the toy simulator provides. Treat the package as a research and teaching instrument. It lacks production identity, privacy, consent, security, clinical, legal, and operational-assurance controls.
+
+## Instructor setup
+
+Before class:
+
+```powershell
+python -m unittest discover -s simulation/tests -v
+python -m simulation --architecture tise --reasoning hybrid --provider heuristic --steps 6
+quarto render course
+```
+
+Use the heuristic provider for guaranteed offline delivery. Demonstrate an external provider only when credentials, network access, cost controls, and data policy are already approved.

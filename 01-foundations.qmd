@@ -1,0 +1,118 @@
+# MOEE Foundations
+
+## Why ecosystem engineering?
+
+A public need is rarely delivered by one organization. Food access, health care, mobility, education, elderly care, and local enterprise depend on stakeholders with different resources, time horizons, authority, and definitions of value. MOEE treats this network as an engineered ecosystem without pretending that it is a single firm or that stakeholders surrender their autonomy.
+
+The modeling objective is not merely to maximize transactions. It is to make the following chain explicit and testable:
+
+\[
+\text{Public need}
+\rightarrow \text{Stakeholder missions}
+\rightarrow \text{MIGs}
+\rightarrow \text{PSKVE exchanges}
+\rightarrow \text{VOMR changes}
+\rightarrow \text{systemic wealth and resilience}.
+\]
+
+## Core model
+
+| Element | Question answered | Typical artifact |
+|---|---|---|
+| Stakeholder classes | Who uses, sources, governs, and operates the ecosystem? | Stakeholder registry |
+| Missions | What must each stakeholder accomplish? | Mission statements and constraints |
+| MIG | When and how intensely is mission capacity used? | \(I_i(t)\in[0,1]\) |
+| PSKVE | What multidimensional exchanges occur? | Product–Service–Knowledge–Value–Environment matrix |
+| VOMR | What state and wealth changes are recorded? | Value–Output–Mission–Resource accounts |
+| PUDAL | How are state, policy, learning, and control connected? | Feedback-control map |
+| Triune Intelligence | Which forms of intelligence inform control? | HNI–CCI–AI evidence map |
+| Triple Markets | How are assets, liquidity, and operations separated? | Stock–Financial–R–O mapping |
+
+## Stakeholder ontology
+
+Every case begins with four functional roles:
+
+- **User stakeholders** consume or benefit from mission outputs.
+- **Source stakeholders** supply resources, products, services, or knowledge.
+- **Regulator/governance stakeholders** define and enforce rules, rights, and public objectives.
+- **Operator stakeholders** schedule, match, route, settle, or maintain ecosystem activity.
+
+An organization may occupy several roles. The model should represent each role explicitly when its mission, constraints, or accounts differ.
+
+## Mission Intensity Graphs
+
+For stakeholder \(i\), the MIG is
+
+\[
+I_i(t)\in[0,1],
+\]
+
+where zero means inactive mission capacity and one means fully scheduled capacity. A simple output relationship is
+
+\[
+O_i(t)=f_i(R_i(t),C_i,E_i(t))I_i(t).
+\]
+
+The MIG is not merely a demand curve. Depending on the stakeholder, it may represent care visits, teaching load, regulatory inspection, vehicle deployment, production, platform throughput, or another mission-specific capacity.
+
+## Two independent design axes
+
+### Reasoning axis \(\rho\)
+
+- **Historical:** replay or deterministic rules.
+- **Probabilistic:** sample from uncertainty-aware models.
+- **Agentic:** reason from goals, beliefs, observations, and constraints.
+- **Hybrid:** combine several reasoners with explicit weights or gates.
+
+### Setup axis \(\kappa\)
+
+- **Independent:** stakeholders commit their own MIGs.
+- **Smart contract:** stakeholders prenegotiate a fixed coordination rule.
+- **Adaptive cooperative:** PUDAL recommends revisions using Triune Intelligence and current feedback.
+
+Keeping these axes separate prevents a common error: attributing an improvement to TISE when it actually came from giving one model a more capable stakeholder reasoner.
+
+## PSKVE and VOMR
+
+PSKVE describes what crosses stakeholder boundaries:
+
+- Products
+- Services
+- Knowledge
+- Values
+- Environment
+
+VOMR describes what is accounted for:
+
+- Value
+- Output
+- Mission
+- Resources
+
+The causal transformation is \(R\rightarrow M\rightarrow O\rightarrow V\), while VOMR is the reporting order. Financial margin is only one component of systemic value:
+
+\[
+\Delta V_i=\operatorname{Revenue}_i-\operatorname{Cost}_i.
+\]
+
+Mission achievement, externalities, equity, safety, and resilience must remain visible rather than being silently collapsed into profit.
+
+## Triune Intelligence and PUDAL
+
+Triune Intelligence combines:
+
+1. Human/Natural Intelligence (HNI)
+2. Crowd/Cultural/Collective Intelligence (CCI)
+3. Artificial Intelligence (AI)
+
+PUDAL uses these channels to perceive state, interpret missions and policy, recommend coordinated actions, and learn from outcomes. AI is one input—not the sovereign objective setter. High-stakes decisions still require domain authority, consent, auditability, and appropriate human judgment.
+
+## Three validation claims
+
+- **Baseline:** validates that stakeholders, missions, MIGs, VOMR accounts, and wealth creation form a coherent executable ecosystem.
+- **SOTA:** validates that a PSKVE Exchange Engine and prenegotiated smart contract can improve a chosen objective relative to baseline.
+- **TISE:** tests whether adaptive cooperative PUDAL control improves value creation and withstands disruptions better than the strongest fixed alternative.
+
+## Concept check
+
+For a public-transport case, identify one stakeholder for each role, give each one a possible MIG, and explain why passenger demand and fleet deployment should not be represented by the same MIG.

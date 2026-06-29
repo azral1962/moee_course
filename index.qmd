@@ -1,0 +1,67 @@
+# Course Overview {.unnumbered}
+
+This course teaches learners to define, model, simulate, and evaluate a **Mission-Oriented Ecosystem Engineering (MOEE)** system. The running case is a campus food-service ecosystem, but the method transfers to elderly services, education, health care, public transportation, and home-based business.
+
+The course keeps three distinctions visible from the beginning:
+
+1. **Stakeholder reasoning** creates a proposed Mission Intensity Graph (MIG): fixed/historical, probabilistic, agentic, or hybrid reasoning.
+2. **Ecosystem setup** determines how proposals are committed: independent baseline, prenegotiated smart-contract SOTA, or adaptive cooperative TISE.
+3. **Evaluation** separates value creation under normal operation from resilience under disruption.
+
+## Audience and prerequisites
+
+The course is intended for advanced undergraduate students, graduate students, public-service designers, systems engineers, policy analysts, and software practitioners. Learners should be able to read basic algebra and simple Python. Prior knowledge of artificial intelligence, economics, or simulation is helpful but not required.
+
+## Learning outcomes
+
+By the end of the course, learners will be able to:
+
+- identify user, source, regulator/governance, and operator stakeholders;
+- define stakeholder missions, VOMR accounts, and PSKVE exchanges;
+- construct and interpret stakeholder MIGs;
+- distinguish MIG reasoning from MIG setup and coordination;
+- explain how Triune Intelligence drives the PUDAL Engine;
+- implement baseline, SOTA, and TISE simulations using reusable Python classes;
+- connect Ollama, OpenAI, or DeepSeek to auditable agent decisions;
+- design normal and disruptive experiments; and
+- evaluate mission achievement, value creation, equity, and resilience without overclaiming results.
+
+## Suggested 12-session schedule
+
+| Session | Topic | Workshop output |
+|---|---|---|
+| 1 | Public needs as ecosystems | Case boundary and public need |
+| 2 | Stakeholder roles and missions | Stakeholder registry |
+| 3 | VOMR accounting | Opening accounts and update rules |
+| 4 | PSKVE Exchange Engine | Exchange matrix |
+| 5 | MIG construction and reasoning | Stakeholder MIG definitions |
+| 6 | PUDAL and Triune Intelligence | Control-loop map |
+| 7 | Baseline, SOTA, and TISE | Three-architecture specification |
+| 8 | Objectives and experimental validity | Metrics and hypotheses |
+| 9 | Python domain model | Executable baseline |
+| 10 | Smart contract and agentic PUDAL | Executable SOTA and TISE |
+| 11 | Disruption experiments and analysis | Comparative CSV results |
+| 12 | Capstone presentation | Defensible MOEE model |
+
+## Assessment
+
+- Concept checks and short exercises: 15%
+- Modeling worksheet: 20%
+- Python labs: 30%
+- Capstone case, simulation, and defense: 35%
+
+The capstone is assessed on conceptual consistency, traceability from public need to code, experimental validity, reproducibility, and appropriate treatment of safety and stakeholder autonomy.
+
+## Repository resources
+
+- Manuscript: `../paper.qmd`
+- Python package: `../simulation/`
+- Provider configuration: `../simulation/.env.example`
+- Executable labs: `labs/`
+- Blank modeling templates: `worksheets.qmd`
+
+Render this course from the repository root with:
+
+```powershell
+quarto render course
+```
