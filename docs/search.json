@@ -284,7 +284,7 @@
     "href": "03-python-simulation.html",
     "title": "3  Step-by-Step Python Simulation Development",
     "section": "",
-    "text": "3.1 Step 0 — Verify Python and tests\nThe repository already contains a standard-library implementation in ../simulation/. This chapter reconstructs the development sequence so learners understand and can replace each layer. Project Files\nRun all commands from the repository root.\nNo external Python package is required for the core simulator.",
+    "text": "3.1 Step 0 — Verify Python and tests\nThe repository already contains a standard-library implementation in ./simulation/. This chapter reconstructs the development sequence so learners understand and can replace each layer.\nsimulation\nRun all commands from the repository root.\nNo external Python package is required for the core simulator.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>Step-by-Step Python Simulation Development</span>"
     ]
